@@ -1,36 +1,39 @@
-# What changed in this update
+# Update — reordering, time controls, Hobart
 
-**Only `index.html` changed.** Everything else in the repo stays exactly as it is —
-don't re-upload the icons, `manifest.json`, `sw.js`, `netlify.toml` or the function.
+**Only `index.html` changed.** Leave everything else in the repo alone.
 
-## How to apply it
+## How to apply
 
-1. GitHub → `melbourne-trip/index.html` → pencil icon to edit.
-2. Click in the editor, `Ctrl+A` to select all, paste the new file over the top.
-3. Commit. Netlify redeploys on its own.
-
-No environment variables changed, so no manual redeploy is needed.
+1. GitHub → `melbourne-trip/index.html` → pencil icon.
+2. Click in the editor, `Ctrl+A`, paste the new file over the top.
+3. Commit. Netlify redeploys itself. No env var changes, so no manual redeploy.
 
 ## What's new
 
-- **Flights are locked in** as a fixed panel at the top, and repeated as locked
-  items in Tuesday's and Saturday's timelines. The editable flight fields are gone.
-- **Every day is now a timeline.** Time down the left, a bar across with the short
-  version, tap to expand the full detail, booking notes and an editable time.
-- **Minus button** on any bar moves it to that day's options list at the bottom.
-  **Plus button** in the options list puts it back at its suggested time.
-- **Add anything at any time** — pick from the options list with a time, or type
-  your own. Your own items behave exactly like the built-in ones and can be
-  deleted permanently with the ✕ in the options list.
-- **Wednesday** is now the op shop run southeast to Tbilisi in Bentleigh East:
-  Chapel St → Elsternwick → Carnegie → Bentleigh → Savers Heatherton → dinner.
-- **Thursday** is Reverb plus galleries, ordered around Reverb's 5pm Thursday close.
-- **Friday** is a Yarra Valley day trip with four operator options.
-- **Saturday** is a full day now that the flights are in the evening, including the
-  couples massage that was previously on Friday.
+**Kathy flies to Hobart.** Updated in the flights panel and in Saturday's timeline.
+Westy is Virgin to Brisbane out of Terminal 3 at 8:40pm; Kathy is Jetstar to Hobart
+out of Terminal 4 at 9:10pm. One trip to the airport still covers both — you split
+at the terminal doors.
+
+**Move items up and down.** Every bar now has ▲ and ▼ on the right.
+
+- Different times: the two items swap times, so the timeline stays honest.
+- Same time: they just swap position in the list.
+- The arrows grey out at the top and bottom of the day.
+
+**Better time editing.** Open any bar and you get the time picker plus
+−30 / −15 / +15 / +30 minute buttons. Handy for shuffling a whole afternoon along
+when something runs over.
+
+**Flights can't be moved.** The arrows are disabled on flight items, and on the
+item directly next to one, so a reorder can never accidentally change a departure
+time. Trying it says "Flight times are fixed".
+
+**Rename your own items.** Anything you typed in yourself now has an editable
+title field when you open it, so you can fix a typo without deleting and re-adding.
 
 ## Storage note
 
-The storage key moved from `mel2026:v1` to `mel2026:v2` because the data shape
-changed. Anything typed into the old version won't carry across — nothing was lost
-that you can't retype in a minute.
+The key moved from `mel2026:v2` to `mel2026:v3` to make room for the sort order.
+It reads your old v2 data on first load, so anything you'd already typed carries
+across and gets sort positions filled in automatically.

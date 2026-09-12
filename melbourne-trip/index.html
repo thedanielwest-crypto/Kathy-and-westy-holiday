@@ -113,10 +113,20 @@ section{margin-top:34px}
 .bartext .car{flex:0 0 auto;color:var(--dimmer);font-size:12px;transition:transform .15s}
 .ev.open .bartext .car{transform:rotate(90deg)}
 .ev.open .bartext .lbl{white-space:normal}
-.barside{flex:0 0 auto;display:flex;align-items:center;border-left:1px solid var(--hair)}
-.barside button{background:none;border:none;color:var(--dimmer);cursor:pointer;padding:0 13px;
-  font-size:18px;line-height:1;height:100%}
-.barside button:hover{color:var(--fluoro);background:rgba(255,62,127,.10)}
+.barside{flex:0 0 auto;display:flex;align-items:stretch;border-left:1px solid var(--hair)}
+.barside button{background:none;border:none;border-left:1px solid var(--hair);color:var(--dimmer);
+  cursor:pointer;padding:0 10px;font-size:14px;line-height:1;min-width:34px}
+.barside button:first-child{border-left:none}
+.barside button:hover:not(:disabled){color:var(--cyan);background:rgba(46,217,228,.10)}
+.barside button.drop{font-size:18px}
+.barside button.drop:hover:not(:disabled){color:var(--fluoro);background:rgba(255,62,127,.10)}
+.barside button:disabled{opacity:.22;cursor:default}
+.timectl{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px;
+  padding-top:12px;border-top:1px solid var(--hair)}
+.timectl label{font-size:12.5px;color:var(--dimmer)}
+.nudge{background:rgba(253,247,234,.07);border:1px solid var(--hair);color:var(--paper);
+  border-radius:8px;padding:8px 11px;font-size:13px;font-weight:600;cursor:pointer}
+.nudge:hover{border-color:var(--cyan);color:var(--cyan)}
 .ev[data-locked="1"] .bar{border-color:rgba(255,193,59,.4);background:rgba(255,193,59,.07)}
 .detail{display:none;margin:2px 0 0 10px;border:1px solid var(--hair);border-top:none;
   border-radius:0 0 11px 11px;padding:14px 14px 15px;background:rgba(27,16,51,.5)}
@@ -237,10 +247,10 @@ footer{margin-top:38px;font-size:12.5px;color:var(--dimmer);border-top:1px solid
     </div>
     <div class="frow">
       <span class="fno" style="color:var(--marigold)">JQ ···</span>
-      <span class="fbody"><b>Sat 26 Sep</b> · Melbourne to Brisbane · Kathy · flight number to confirm</span>
+      <span class="fbody"><b>Sat 26 Sep</b> · Melbourne to <b>Hobart</b> · Kathy · flight number to confirm</span>
       <span class="ftime">9:10pm</span>
     </div>
-    <p class="flock">Locked in. Separate flights home, 30 minutes apart, so one trip to the airport covers both.</p>
+    <p class="flock">Locked in. Westy home to Brisbane, Kathy on to Hobart, 30 minutes apart — one trip to the airport covers both, then you split at the terminals.</p>
   </div>
 
   <div class="alert">
@@ -254,7 +264,7 @@ footer{margin-top:38px;font-size:12.5px;color:var(--dimmer);border-top:1px solid
 
   <section>
     <div class="sechead"><h2>The plan</h2><div class="rule"></div></div>
-    <p class="lede">Tap any bar to open it up. The minus button drops it into that day's options list at the bottom, and the plus button there puts it back at whatever time you like.</p>
+    <p class="lede">Tap any bar to open it up. Arrows move it earlier or later, the minus drops it into that day's options list at the bottom, and the plus down there puts it back.</p>
     <nav class="daynav" id="daynav" role="tablist" aria-label="Days"></nav>
     <div id="days"></div>
   </section>
@@ -525,10 +535,10 @@ const SEED = {
         d:"SkyBus from Southern Cross is the predictable option today because it doesn't sit in the same traffic a taxi does. Allow two and a half hours door to gate rather than the usual ninety minutes.",
         meta:"SkyBus · ~30 min", url:"https://www.skybus.com.au/" },
       { id:"s6", t:"20:40", on:true, locked:true, s:"VA353 — Westy departs",
-        d:"Virgin Australia to Brisbane. Terminal 3.", meta:"Virgin · T3" },
-      { id:"s7", t:"21:10", on:true, locked:true, s:"JQ — Kathy departs",
-        d:"Jetstar to Brisbane, flight number still to confirm. Terminal 4. Thirty minutes after Westy, so travel out together and part at security.",
-        meta:"Jetstar · T4 · number TBC" },
+        d:"Virgin Australia to Brisbane. Terminal 3.", meta:"Virgin · T3 · Brisbane" },
+      { id:"s7", t:"21:10", on:true, locked:true, s:"JQ — Kathy departs for Hobart",
+        d:"Jetstar to Hobart, flight number still to confirm. Terminal 4, while Westy is over at Terminal 3 for Virgin. Thirty minutes apart, so travel out together and part at the terminal doors.",
+        meta:"Jetstar · T4 · Hobart · number TBC" },
       { id:"s8", t:"11:00", on:false, s:"Reverb, second pass",
         d:"Open 11am to 7pm on Saturdays, the latest all week. If Thursday felt rushed, or if you want an hour in the Listening Room without watching the clock, today is actually the better day for it.",
         meta:"Fed Square · 11am–7pm", url:"https://www.acmi.net.au/whats-on/the-vinyl-factory-reverb/", map:"https://maps.google.com/?cid=1369346269508606116" },
@@ -552,7 +562,7 @@ const SEED = {
   ],
 
   check:[
-    "Confirm Kathy's Jetstar flight number",
+    "Confirm Kathy's Jetstar flight number to Hobart",
     "Book Cartier timed entry at NGV",
     "Book Reverb at ACMI for Thursday 1:30pm",
     "Book Tbilisi for Wednesday — it closes at 9pm",
@@ -570,22 +580,32 @@ const SEED = {
 /* ============================================================
    State
    ============================================================ */
-const KEY = "mel2026:v2";
+const KEY = "mel2026:v3";
+const OLDKEY = "mel2026:v2";
 let S = null, memory = null;
 
 const blank = () => ({ days:{}, notes:{}, essentials:{}, checked:{}, extraChecks:[] });
 
+function seedDay(d){
+  const placed = {}, ord = {};
+  d.items.forEach((it, i) => { if (it.on){ placed[it.id] = it.t; ord[it.id] = i; } });
+  return { placed, ord, custom:{} };
+}
+
 function load(){
   try{
-    const raw = localStorage.getItem(KEY);
+    const raw = localStorage.getItem(KEY) || localStorage.getItem(OLDKEY);
     S = raw ? Object.assign(blank(), JSON.parse(raw)) : blank();
   }catch(e){ S = memory || blank(); }
   SEED.days.forEach(d => {
-    if (!S.days[d.id]){
-      const placed = {};
-      d.items.forEach(it => { if (it.on) placed[it.id] = it.t; });
-      S.days[d.id] = { placed, custom:{} };
-    }
+    if (!S.days[d.id]) { S.days[d.id] = seedDay(d); return; }
+    const ds = S.days[d.id];
+    ds.custom = ds.custom || {};
+    ds.placed = ds.placed || {};
+    ds.ord = ds.ord || {};
+    // give anything without a sort position one, in seed order
+    d.items.forEach((it, i) => { if (ds.ord[it.id] === undefined) ds.ord[it.id] = i; });
+    Object.keys(ds.custom).forEach((id, i) => { if (ds.ord[id] === undefined) ds.ord[id] = 900 + i; });
   });
 }
 let saveTimer;
@@ -621,7 +641,14 @@ function catalogue(dayId){
   Object.values(S.days[dayId].custom || {}).forEach(it => out[it.id] = it);
   return out;
 }
-const byTime = (a, b) => (a.time || "").localeCompare(b.time || "");
+function sortRows(dayId, rows){
+  const ord = S.days[dayId].ord || {};
+  return rows.sort((a, b) => {
+    const t = (a.time || "").localeCompare(b.time || "");
+    if (t !== 0) return t;
+    return (ord[a.id] ?? 0) - (ord[b.id] ?? 0);
+  });
+}
 
 /* ============================================================
    Render
@@ -671,27 +698,35 @@ function renderTimeline(dayId){
   const host = document.getElementById("tl-" + dayId);
   const cat = catalogue(dayId);
   const placed = S.days[dayId].placed;
-  const rows = Object.keys(placed)
+  const rows = sortRows(dayId, Object.keys(placed)
     .filter(id => cat[id])
-    .map(id => ({ id, time: placed[id], it: cat[id] }))
-    .sort(byTime);
+    .map(id => ({ id, time: placed[id], it: cat[id] })));
 
   if (!rows.length){
     host.innerHTML = `<p class="empty">Nothing scheduled yet. Add something from the options below.</p>`;
     return;
   }
 
-  host.innerHTML = rows.map(r => {
+  host.innerHTML = rows.map((r, ri) => {
     const it = r.it;
     const lock = it.locked ? "1" : "0";
+    const prev = rows[ri - 1], next = rows[ri + 1];
+    const noUp = ri === 0 || it.locked || (prev && prev.it.locked);
+    const noDown = ri === rows.length - 1 || it.locked || (next && next.it.locked);
     return `<div class="ev" data-ev="${dayId}:${r.id}" data-locked="${lock}">
       <span class="clock">${esc(fmt(r.time))}</span>
       <div class="bar">
         <button class="bartext" data-toggle="${dayId}:${r.id}" aria-expanded="false">
           <span class="lbl">${esc(it.s)}</span><span class="car">▶</span>
         </button>
-        ${it.locked ? "" : `<span class="barside"><button data-remove="${dayId}:${r.id}"
-            title="Move to the options list" aria-label="Move ${esc(it.s)} to the options list">−</button></span>`}
+        <span class="barside">
+          <button data-move="up:${dayId}:${r.id}" ${noUp ? "disabled" : ""}
+            title="Move earlier" aria-label="Move ${esc(it.s)} earlier">▲</button>
+          <button data-move="down:${dayId}:${r.id}" ${noDown ? "disabled" : ""}
+            title="Move later" aria-label="Move ${esc(it.s)} later">▼</button>
+          ${it.locked ? "" : `<button class="drop" data-remove="${dayId}:${r.id}"
+            title="Move to the options list" aria-label="Move ${esc(it.s)} to the options list">−</button>`}
+        </span>
       </div>
       <div class="detail">
         ${it.meta ? `<div class="meta">${esc(it.meta)}</div>` : ""}
@@ -701,9 +736,17 @@ function renderTimeline(dayId){
         ${(it.url || it.map) ? `<p class="links">
           ${it.url ? `<a href="${esc(it.url)}" target="_blank" rel="noopener">Website</a>` : ""}
           ${it.map ? `<a href="${esc(it.map)}" target="_blank" rel="noopener">Map</a>` : ""}</p>` : ""}
-        ${it.locked ? "" : `<div class="editrow">
+        ${it.custom ? `<div class="note">
+          <label for="ti-${dayId}-${r.id}">What it is</label>
+          <input type="text" id="ti-${dayId}-${r.id}" value="${esc(it.s)}" data-title="${dayId}:${r.id}">
+        </div>` : ""}
+        ${it.locked ? `<p class="meta" style="margin-top:12px">Flight time is fixed.</p>` : `<div class="timectl">
           <label for="tm-${dayId}-${r.id}">Time</label>
           <input type="time" id="tm-${dayId}-${r.id}" value="${esc(r.time)}" data-time="${dayId}:${r.id}">
+          <button class="nudge" data-nudge="-30:${dayId}:${r.id}">−30 min</button>
+          <button class="nudge" data-nudge="-15:${dayId}:${r.id}">−15</button>
+          <button class="nudge" data-nudge="15:${dayId}:${r.id}">+15</button>
+          <button class="nudge" data-nudge="30:${dayId}:${r.id}">+30 min</button>
         </div>`}
         <div class="note">
           <label for="nt-${dayId}-${r.id}">Bookings, references, notes</label>
@@ -781,6 +824,54 @@ function renderCheck(){
      <label class="txt" for="k${i}">${esc(t)}</label></li>`).join("");
 }
 
+/* ---------- reordering and time helpers ---------- */
+function nextOrd(dayId){
+  const vals = Object.values(S.days[dayId].ord || {});
+  return (vals.length ? Math.max(...vals) : 0) + 1;
+}
+function shift(time, mins){
+  const [h, m] = String(time).split(":").map(Number);
+  let total = (h * 60 + m + mins) % 1440;
+  if (total < 0) total += 1440;
+  return String(Math.floor(total / 60)).padStart(2,"0") + ":" + String(total % 60).padStart(2,"0");
+}
+function orderedIds(dayId){
+  const cat = catalogue(dayId), placed = S.days[dayId].placed;
+  return sortRows(dayId, Object.keys(placed).filter(id => cat[id])
+    .map(id => ({ id, time: placed[id] }))).map(r => r.id);
+}
+function moveItem(dayId, id, dir){
+  const ids = orderedIds(dayId);
+  const i = ids.indexOf(id);
+  const j = dir === "up" ? i - 1 : i + 1;
+  if (i < 0 || j < 0 || j >= ids.length) return;
+  const other = ids[j];
+  const cat = catalogue(dayId);
+  // never shuffle a locked flight, and never swap a time with one
+  if (cat[id]?.locked || cat[other]?.locked){ flash("Flight times are fixed"); return; }
+  const placed = S.days[dayId].placed, ord = S.days[dayId].ord;
+  if (placed[id] === placed[other]){
+    const a = ord[id], b = ord[other];
+    ord[id] = b; ord[other] = a;
+  } else {
+    const a = placed[id], b = placed[other];
+    placed[id] = b; placed[other] = a;
+    if (S.days[dayId].custom[id]) S.days[dayId].custom[id].t = b;
+    if (S.days[dayId].custom[other]) S.days[dayId].custom[other].t = a;
+  }
+  save();
+  reopen(dayId, id);
+  flash(dir === "up" ? "Moved earlier" : "Moved later");
+}
+function reopen(dayId, id){
+  const wasOpen = document.querySelector(`[data-ev="${dayId}:${id}"]`)?.classList.contains("open");
+  renderTimeline(dayId);
+  if (wasOpen){
+    const ev = document.querySelector(`[data-ev="${dayId}:${id}"]`);
+    if (ev){ ev.classList.add("open"); ev.querySelector(".bartext").setAttribute("aria-expanded","true"); }
+  }
+}
+
 /* ============================================================
    Events
    ============================================================ */
@@ -807,8 +898,25 @@ document.addEventListener("click", e => {
     const [day, id] = ad.dataset.add.split(":");
     const it = catalogue(day)[id];
     S.days[day].placed[id] = it.t || "12:00";
+    if (S.days[day].ord[id] === undefined) S.days[day].ord[id] = nextOrd(day);
     renderTimeline(day); renderPool(day); save();
     flash("Added to the timeline");
+    return;
+  }
+  const mv = t.closest("[data-move]");
+  if (mv){
+    const [dir, day, id] = mv.dataset.move.split(":");
+    moveItem(day, id, dir);
+    return;
+  }
+  const nd = t.closest("[data-nudge]");
+  if (nd){
+    const [mins, day, id] = nd.dataset.nudge.split(":");
+    const cur = S.days[day].placed[id] || "12:00";
+    S.days[day].placed[id] = shift(cur, parseInt(mins, 10));
+    if (S.days[day].custom[id]) S.days[day].custom[id].t = S.days[day].placed[id];
+    save();
+    reopen(day, id);
     return;
   }
   const kill = t.closest("[data-kill]");
@@ -838,6 +946,7 @@ document.addEventListener("click", e => {
     const time = document.getElementById("at-" + day).value || "12:00";
     S.days[day].custom[id] = { id, t:time, s:txt, d:"", custom:true };
     S.days[day].placed[id] = time;
+    S.days[day].ord[id] = nextOrd(day);
     el.value = "";
     renderTimeline(day); renderPool(day); save();
     flash("Added yours");
@@ -849,18 +958,26 @@ document.addEventListener("input", e => {
   const t = e.target;
   if (t.dataset.note !== undefined){ S.notes[t.dataset.note] = t.value; save(); }
   if (t.dataset.ess !== undefined){ S.essentials[t.dataset.ess] = t.value; save(); }
+  if (t.dataset.title !== undefined){
+    const [day, id] = t.dataset.title.split(":");
+    if (S.days[day].custom[id]){
+      S.days[day].custom[id].s = t.value;
+      const lbl = document.querySelector(`[data-ev="${day}:${id}"] .lbl`);
+      if (lbl) lbl.textContent = t.value;
+      save();
+    }
+  }
 });
 
 document.addEventListener("change", e => {
   const t = e.target;
   if (t.dataset.time !== undefined){
     const [day, id] = t.dataset.time.split(":");
+    if (!t.value) return;
     S.days[day].placed[id] = t.value;
     if (S.days[day].custom[id]) S.days[day].custom[id].t = t.value;
     save();
-    renderTimeline(day);
-    const ev = document.querySelector(`[data-ev="${day}:${id}"]`);
-    if (ev){ ev.classList.add("open"); ev.querySelector(".bartext").setAttribute("aria-expanded","true"); }
+    reopen(day, id);
     return;
   }
   if (t.dataset.check !== undefined){ S.checked[t.dataset.check] = t.checked; save(); }
@@ -912,10 +1029,11 @@ async function cloudPull(){
     const j = await r.json();
     if (j && j.data && Object.keys(j.data).length){
       S = Object.assign(blank(), j.data);
-      SEED.days.forEach(d => { if (!S.days[d.id]){
-        const placed = {}; d.items.forEach(it => { if (it.on) placed[it.id] = it.t; });
-        S.days[d.id] = { placed, custom:{} };
-      }});
+      SEED.days.forEach(d => {
+        if (!S.days[d.id]) S.days[d.id] = seedDay(d);
+        S.days[d.id].ord = S.days[d.id].ord || {};
+        S.days[d.id].custom = S.days[d.id].custom || {};
+      });
       renderDays(); renderEssentials(); renderCheck();
       flash("Loaded from Airtable");
     }
