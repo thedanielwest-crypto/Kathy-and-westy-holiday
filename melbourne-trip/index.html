@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Melbourne — Westy &amp; Mrs West</title>
-<meta name="description" content="Three days of art, vinyl, op shops and Greek food in Melbourne, 22–26 September 2026.">
+<title>Melbourne — Westy &amp; Kathy</title>
+<meta name="description" content="Op shops, Reverb, the Yarra Valley and a Georgian feast. Melbourne, 22–26 September 2026.">
 <meta name="theme-color" content="#1B1033">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/icon-180.png">
@@ -16,170 +16,164 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#1B1033;
-  --ink-2:#271747;
-  --ink-3:#33205C;
-  --paper:#FDF7EA;
-  --fluoro:#FF3E7F;
-  --cyan:#2ED9E4;
-  --marigold:#FFC13B;
-  --mint:#7BE495;
-  --dim:rgba(253,247,234,.62);
-  --dimmer:rgba(253,247,234,.34);
-  --hair:rgba(253,247,234,.16);
-  --r:14px;
-  --maxw:760px;
+  --ink:#1B1033; --ink-2:#271747; --paper:#FDF7EA;
+  --fluoro:#FF3E7F; --cyan:#2ED9E4; --marigold:#FFC13B; --mint:#7BE495;
+  --dim:rgba(253,247,234,.62); --dimmer:rgba(253,247,234,.34); --hair:rgba(253,247,234,.16);
+  --r:14px; --maxw:780px;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{
-  background:var(--ink);
-  color:var(--paper);
-  font-family:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  font-size:16px;line-height:1.55;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-body::before{
-  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:
-    radial-gradient(60vw 42vw at 82% -6%, rgba(255,62,127,.30), transparent 62%),
-    radial-gradient(52vw 40vw at 4% 12%, rgba(46,217,228,.20), transparent 60%),
-    radial-gradient(70vw 50vw at 50% 108%, rgba(255,193,59,.14), transparent 62%);
-}
-.wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 18px 96px}
-h1,h2,h3,.display{font-family:"Bricolage Grotesque","Instrument Sans",sans-serif;font-weight:800;letter-spacing:-.02em;line-height:.98;margin:0}
+body{background:var(--ink);color:var(--paper);font-family:"Instrument Sans",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(60vw 42vw at 82% -6%,rgba(255,62,127,.30),transparent 62%),
+             radial-gradient(52vw 40vw at 4% 12%,rgba(46,217,228,.20),transparent 60%),
+             radial-gradient(70vw 50vw at 50% 108%,rgba(255,193,59,.14),transparent 62%)}
+.wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 18px 100px}
+h1,h2,h3{font-family:"Bricolage Grotesque","Instrument Sans",sans-serif;font-weight:800;letter-spacing:-.02em;line-height:.98;margin:0}
 a{color:var(--cyan)}
 button{font-family:inherit}
+:focus-visible{outline:3px solid var(--marigold);outline-offset:2px}
 
-/* ---------- hero ---------- */
-.hero{padding:34px 0 18px;position:relative}
+/* hero */
+.hero{padding:32px 0 14px;position:relative}
 .kicker{font-size:13px;color:var(--marigold);font-weight:600;margin-bottom:12px}
-.hero h1{font-size:clamp(50px,15.5vw,104px);text-transform:none}
+.hero h1{font-size:clamp(48px,15vw,100px)}
 .hero h1 span.b{display:block;color:var(--fluoro)}
 .hero h1 span.c{display:block;color:var(--cyan);margin-left:.06em}
-.dates{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.chip{border:1px solid var(--hair);border-radius:999px;padding:5px 12px;font-size:13px;color:var(--dim);background:rgba(253,247,234,.04)}
-.chip.hot{border-color:var(--fluoro);color:var(--fluoro)}
-.count{margin-top:18px;display:flex;align-items:baseline;gap:10px}
-.count b{font-family:"Bricolage Grotesque",sans-serif;font-size:44px;color:var(--marigold);line-height:1}
+.count{margin-top:16px;display:flex;align-items:baseline;gap:10px}
+.count b{font-family:"Bricolage Grotesque",sans-serif;font-size:42px;color:var(--marigold);line-height:1}
 .count span{font-size:14px;color:var(--dim)}
-
-/* spinning record */
-.disc{position:absolute;right:-42px;top:20px;width:170px;height:170px;opacity:.9}
+.disc{position:absolute;right:-40px;top:18px;width:165px;height:165px;opacity:.9}
 .disc .spin{transform-origin:50% 50%;animation:spin 7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion:reduce){.disc .spin{animation:none}}
-@media(max-width:560px){.disc{width:110px;height:110px;right:-26px;top:6px;opacity:.55}}
+@media(prefers-reduced-motion:reduce){.disc .spin{animation:none}}
+@media(max-width:560px){.disc{width:104px;height:104px;right:-24px;top:6px;opacity:.5}}
 
-/* ---------- alert ---------- */
-.alert{
-  margin:22px 0 6px;border-radius:var(--r);padding:16px 18px;
-  background:linear-gradient(100deg,rgba(255,62,127,.20),rgba(255,193,59,.12));
-  border:1px solid rgba(255,62,127,.45);
-}
+/* locked flights */
+.flights{margin:20px 0 4px;border:1px solid rgba(46,217,228,.45);border-radius:var(--r);overflow:hidden;background:rgba(46,217,228,.07)}
+.flights h3{font-size:15px;padding:13px 16px 0;color:var(--cyan)}
+.frow{display:flex;gap:12px;align-items:baseline;padding:11px 16px;border-top:1px solid var(--hair);margin-top:11px}
+.frow:first-of-type{margin-top:11px}
+.fno{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;flex:0 0 82px;letter-spacing:0}
+.fbody{flex:1;font-size:14px;color:var(--dim)}
+.fbody b{color:var(--paper);font-weight:600}
+.ftime{font-size:15px;font-weight:600;color:var(--marigold);white-space:nowrap}
+.flock{padding:10px 16px 13px;font-size:12.5px;color:var(--dimmer);border-top:1px solid var(--hair)}
+
+/* alert */
+.alert{margin:22px 0 6px;border-radius:var(--r);padding:16px 18px;
+  background:linear-gradient(100deg,rgba(255,62,127,.20),rgba(255,193,59,.12));border:1px solid rgba(255,62,127,.45)}
 .alert h3{font-size:19px;color:var(--fluoro);margin-bottom:8px}
-.alert p{margin:0 0 8px;font-size:14.5px;color:var(--paper)}
 .alert ul{margin:8px 0 0;padding-left:18px;font-size:14.5px;color:var(--dim)}
-.alert li{margin-bottom:5px}
+.alert li{margin-bottom:6px}
 .alert li b{color:var(--paper);font-weight:600}
 
-/* ---------- section frames ---------- */
 section{margin-top:34px}
 .sechead{display:flex;align-items:center;gap:12px;margin-bottom:14px}
 .sechead h2{font-size:26px}
 .rule{flex:1;height:1px;background:var(--hair)}
+.lede{margin:0 0 14px;font-size:14.5px;color:var(--dim)}
 
-/* ---------- day nav ---------- */
-.daynav{display:flex;gap:8px;overflow-x:auto;padding:4px 0 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+/* day nav */
+.daynav{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px;scrollbar-width:none}
 .daynav::-webkit-scrollbar{display:none}
-.daynav button{
-  flex:0 0 auto;border:1px solid var(--hair);background:rgba(253,247,234,.05);color:var(--dim);
-  border-radius:12px;padding:9px 14px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;
-  transition:background .15s,color .15s,border-color .15s;
-}
+.daynav button{flex:0 0 auto;border:1px solid var(--hair);background:rgba(253,247,234,.05);color:var(--dim);
+  border-radius:12px;padding:9px 14px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap}
 .daynav button:hover{color:var(--paper)}
 .daynav button[aria-selected="true"]{background:var(--fluoro);border-color:var(--fluoro);color:#25092F}
-.daynav button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,.opt:focus-visible,.iconbtn:focus-visible{outline:3px solid var(--marigold);outline-offset:2px}
 
-/* ---------- day card ---------- */
-.day{display:none;animation:fade .22s ease}
+.day{display:none}
 .day.on{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.day{animation:none}}
-.dayhead{
-  border-radius:var(--r) var(--r) 0 0;padding:18px;
-  background:var(--ink-2);border:1px solid var(--hair);border-bottom:none;
-  display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
-}
-.dayhead h3{font-size:30px}
+.dayhead{border:1px solid var(--hair);border-radius:var(--r);padding:17px;background:var(--ink-2);
+  display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:16px}
+.dayhead h3{font-size:27px}
 .dayhead .sub{font-size:14px;color:var(--dim);margin-top:6px}
-.dayhead .tag{font-size:12px;font-weight:600;border-radius:8px;padding:5px 9px;white-space:nowrap}
+.tag{font-size:12px;font-weight:600;border-radius:8px;padding:5px 9px;white-space:nowrap}
 .tag.gf{background:rgba(255,62,127,.18);color:var(--fluoro);border:1px solid rgba(255,62,127,.5)}
 .tag.ok{background:rgba(46,217,228,.14);color:var(--cyan);border:1px solid rgba(46,217,228,.4)}
+.tag.hol{background:rgba(255,193,59,.16);color:var(--marigold);border:1px solid rgba(255,193,59,.45)}
 
-.slots{border:1px solid var(--hair);border-radius:0 0 var(--r) var(--r);background:rgba(253,247,234,.035);overflow:hidden}
-.slot{padding:18px;border-top:1px dashed var(--hair);position:relative}
-.slot:first-child{border-top:none}
-.slot .when{font-size:13px;font-weight:600;color:var(--marigold);margin-bottom:4px;display:flex;justify-content:space-between;gap:10px;align-items:center}
-.slot h4{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:19px;margin:0 0 6px;letter-spacing:-.01em}
-.slot p{margin:0;font-size:14.5px;color:var(--dim)}
-.slot p + p{margin-top:8px}
-.slot .warn{color:var(--fluoro);font-weight:500}
-.slot .win{color:var(--mint)}
-
-/* option picks */
-.opts{display:grid;gap:10px;margin-top:14px}
-.opt{
-  text-align:left;width:100%;cursor:pointer;color:inherit;
-  border:1px solid var(--hair);background:rgba(27,16,51,.55);border-radius:12px;padding:13px 14px;
-  display:block;transition:border-color .15s,background .15s;
-}
-.opt:hover{border-color:rgba(253,247,234,.4)}
-.opt .top{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
-.opt .nm{font-weight:600;font-size:15.5px}
-.opt .meta{font-size:12.5px;color:var(--dimmer);white-space:nowrap}
-.opt .why{font-size:13.5px;color:var(--dim);margin-top:5px}
-.opt .links{margin-top:9px;display:flex;gap:14px;font-size:13px}
-.opt .links a{text-decoration:none;border-bottom:1px solid rgba(46,217,228,.4);padding-bottom:1px}
-.opt[data-picked="1"]{border-color:var(--mint);background:rgba(123,228,149,.10)}
-.opt[data-picked="1"] .nm::after{content:"  ✓ booked";color:var(--mint);font-weight:600;font-size:12.5px;letter-spacing:.01em}
-.pickhint{font-size:12.5px;color:var(--dimmer);margin-top:10px}
-
-/* notes + inputs */
-.note{margin-top:12px}
+/* ---------- timeline ---------- */
+.tl{position:relative;padding-left:62px}
+.tl::before{content:"";position:absolute;left:62px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(180deg,var(--cyan),var(--fluoro),var(--marigold));opacity:.45;border-radius:2px}
+.ev{position:relative;margin-bottom:10px}
+.ev .clock{position:absolute;left:-62px;top:12px;width:54px;text-align:right;font-size:12.5px;
+  font-weight:600;color:var(--marigold);line-height:1.2}
+.ev::after{content:"";position:absolute;left:-11px;top:17px;width:10px;height:10px;border-radius:50%;
+  background:var(--ink);border:2px solid var(--cyan);z-index:2}
+.ev[data-locked="1"]::after{border-color:var(--marigold);background:var(--marigold)}
+.bar{display:flex;align-items:stretch;gap:0;border:1px solid var(--hair);border-radius:11px;
+  background:rgba(253,247,234,.05);overflow:hidden;margin-left:10px}
+.bar:hover{border-color:rgba(253,247,234,.34)}
+.bartext{flex:1;text-align:left;background:none;border:none;color:inherit;cursor:pointer;
+  padding:12px 13px;font-size:15px;font-weight:500;display:flex;gap:9px;align-items:center;min-width:0}
+.bartext .lbl{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bartext .car{flex:0 0 auto;color:var(--dimmer);font-size:12px;transition:transform .15s}
+.ev.open .bartext .car{transform:rotate(90deg)}
+.ev.open .bartext .lbl{white-space:normal}
+.barside{flex:0 0 auto;display:flex;align-items:center;border-left:1px solid var(--hair)}
+.barside button{background:none;border:none;color:var(--dimmer);cursor:pointer;padding:0 13px;
+  font-size:18px;line-height:1;height:100%}
+.barside button:hover{color:var(--fluoro);background:rgba(255,62,127,.10)}
+.ev[data-locked="1"] .bar{border-color:rgba(255,193,59,.4);background:rgba(255,193,59,.07)}
+.detail{display:none;margin:2px 0 0 10px;border:1px solid var(--hair);border-top:none;
+  border-radius:0 0 11px 11px;padding:14px 14px 15px;background:rgba(27,16,51,.5)}
+.ev.open .detail{display:block}
+.ev.open .bar{border-radius:11px 11px 0 0;border-bottom-color:transparent}
+.detail h4{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;margin:0 0 7px}
+.detail p{margin:0 0 9px;font-size:14.5px;color:var(--dim)}
+.detail p:last-of-type{margin-bottom:0}
+.detail .warn{color:var(--fluoro)}
+.detail .win{color:var(--mint)}
+.meta{font-size:12.5px;color:var(--dimmer);margin-bottom:8px}
+.links{display:flex;gap:14px;font-size:13.5px;margin:10px 0 0;flex-wrap:wrap}
+.links a{text-decoration:none;border-bottom:1px solid rgba(46,217,228,.4)}
+.editrow{display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.editrow label{font-size:12.5px;color:var(--dimmer)}
+.note{margin-top:10px}
 .note label{display:block;font-size:12.5px;color:var(--dimmer);margin-bottom:5px}
-input[type=text],input[type=datetime-local],input[type=date],input[type=time],textarea{
-  width:100%;background:rgba(253,247,234,.06);border:1px solid var(--hair);color:var(--paper);
-  border-radius:10px;padding:10px 12px;font-size:15px;font-family:inherit;
-}
-textarea{min-height:64px;resize:vertical;line-height:1.5}
-input::placeholder,textarea::placeholder{color:rgba(253,247,234,.30)}
-input:focus,textarea:focus{border-color:var(--cyan);background:rgba(253,247,234,.09)}
 
-/* custom items */
-.custom{border-top:1px dashed var(--hair);padding:16px 18px;background:rgba(46,217,228,.04)}
-.custom h5{margin:0 0 10px;font-size:13px;font-weight:600;color:var(--cyan)}
-.crow{display:flex;gap:8px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--hair)}
-.crow:last-of-type{border-bottom:none}
-.crow .ct{flex:0 0 66px;font-size:13px;color:var(--marigold);font-weight:600;padding-top:2px}
-.crow .cb{flex:1;font-size:14.5px}
-.crow .cb small{display:block;color:var(--dim);font-size:13px}
-.iconbtn{background:none;border:none;color:var(--dimmer);cursor:pointer;font-size:17px;line-height:1;padding:3px 6px;border-radius:6px}
-.iconbtn:hover{color:var(--fluoro)}
-.addrow{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-.addrow input[type=text]{flex:1;min-width:130px}
-.addrow input.tm{flex:0 0 96px}
-.btn{
-  border:none;border-radius:10px;padding:10px 16px;font-size:14px;font-weight:600;cursor:pointer;
-  background:var(--cyan);color:#0C2E31;transition:transform .1s,filter .15s;
-}
+input[type=text],input[type=time],textarea,select{width:100%;background:rgba(253,247,234,.06);
+  border:1px solid var(--hair);color:var(--paper);border-radius:10px;padding:10px 12px;font-size:15px;font-family:inherit}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--dimmer) 50%),linear-gradient(135deg,var(--dimmer) 50%,transparent 50%);
+  background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:36px}
+select option{background:var(--ink-2);color:var(--paper)}
+input[type=time]{width:108px;padding:9px 10px}
+textarea{min-height:58px;resize:vertical}
+input::placeholder,textarea::placeholder{color:rgba(253,247,234,.30)}
+input:focus,textarea:focus,select:focus{border-color:var(--cyan);background:rgba(253,247,234,.09)}
+
+.btn{border:none;border-radius:10px;padding:10px 15px;font-size:14px;font-weight:600;cursor:pointer;
+  background:var(--cyan);color:#0C2E31}
 .btn:hover{filter:brightness(1.08)}
 .btn:active{transform:translateY(1px)}
 .btn.ghost{background:rgba(253,247,234,.07);color:var(--paper);border:1px solid var(--hair)}
 .btn.pink{background:var(--fluoro);color:#2A0A18}
+.btn.sm{padding:7px 12px;font-size:13px}
 
-/* essentials */
+/* add-to-timeline */
+.adder{margin:16px 0 0;border:1px dashed var(--hair);border-radius:var(--r);padding:15px;background:rgba(46,217,228,.05)}
+.adder h5{margin:0 0 11px;font-size:13px;font-weight:600;color:var(--cyan)}
+.arow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.arow .grow{flex:1;min-width:150px}
+.hint{font-size:12.5px;color:var(--dimmer);margin:10px 0 0}
+
+/* pool */
+.pool{margin-top:20px;border:1px solid var(--hair);border-radius:var(--r);padding:17px;background:rgba(253,247,234,.035)}
+.pool h4{font-family:"Bricolage Grotesque",sans-serif;font-size:18px;margin:0 0 5px}
+.pool .psub{font-size:13.5px;color:var(--dimmer);margin:0 0 13px}
+.pitem{border-top:1px solid var(--hair);padding:12px 0;display:flex;gap:11px;align-items:flex-start}
+.pitem:first-of-type{border-top:none;padding-top:2px}
+.pmain{flex:1;min-width:0}
+.pmain .pt{font-size:14.5px;font-weight:500}
+.pmain .pd{font-size:13px;color:var(--dim);margin-top:3px}
+.pmain .pw{font-size:12.5px;color:var(--marigold);margin-top:3px}
+.pbtns{flex:0 0 auto;display:flex;gap:6px;align-items:center}
+.empty{font-size:13.5px;color:var(--dimmer)}
+
+/* panels */
 .grid{display:grid;gap:12px;grid-template-columns:1fr 1fr}
 @media(max-width:560px){.grid{grid-template-columns:1fr}}
 .panel{border:1px solid var(--hair);border-radius:var(--r);padding:18px;background:rgba(253,247,234,.035)}
@@ -188,40 +182,26 @@ input:focus,textarea:focus{border-color:var(--cyan);background:rgba(253,247,234,
 .field:last-child{margin-bottom:0}
 .field label{display:block;font-size:12.5px;color:var(--dimmer);margin-bottom:5px}
 
-/* checklist */
-.check li{list-style:none;display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--hair)}
 .check{margin:0;padding:0}
+.check li{list-style:none;display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--hair)}
 .check input{margin-top:4px;accent-color:var(--fluoro);width:17px;height:17px;flex:0 0 auto}
 .check .txt{flex:1;font-size:14.5px}
 .check input:checked + .txt{color:var(--dimmer);text-decoration:line-through}
 
-/* also-on cards */
-.also{display:grid;gap:12px}
-.card{border:1px solid var(--hair);border-radius:var(--r);padding:16px;background:rgba(253,247,234,.035);border-left:4px solid var(--marigold)}
-.card.pk{border-left-color:var(--fluoro)}
-.card.cy{border-left-color:var(--cyan)}
-.card h4{font-family:"Bricolage Grotesque",sans-serif;font-size:17px;margin:0 0 3px}
-.card .w{font-size:12.5px;color:var(--marigold);margin-bottom:7px;font-weight:600}
-.card p{margin:0;font-size:14px;color:var(--dim)}
-.card .lk{margin-top:9px;font-size:13px;display:inline-block}
-
-/* toolbar */
-.bar{
-  position:fixed;left:0;right:0;bottom:0;z-index:20;
-  background:rgba(27,16,51,.93);backdrop-filter:blur(14px);border-top:1px solid var(--hair);
-  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
-}
-.bar .in{max-width:var(--maxw);margin:0 auto;display:flex;gap:8px;align-items:center;justify-content:space-between}
-.bar .st{font-size:12.5px;color:var(--dimmer);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.bar button{padding:9px 13px;font-size:13px}
+.bar-fixed{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(27,16,51,.93);
+  backdrop-filter:blur(14px);border-top:1px solid var(--hair);padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+.bar-fixed .in{max-width:var(--maxw);margin:0 auto;display:flex;gap:8px;align-items:center}
+.bar-fixed .st{font-size:12.5px;color:var(--dimmer);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-fixed button{padding:9px 13px;font-size:13px}
 footer{margin-top:38px;font-size:12.5px;color:var(--dimmer);border-top:1px solid var(--hair);padding-top:16px}
 .wave{display:block;width:100%;height:26px;margin:26px 0;opacity:.5}
 
 @media print{
-  body::before,.bar,.daynav,.disc{display:none!important}
+  body::before,.bar-fixed,.daynav,.disc,.adder,.barside{display:none!important}
   body{background:#fff;color:#111}
-  .day{display:block!important;page-break-inside:avoid}
-  .opt,.panel,.card,.slots,.dayhead{border-color:#bbb;background:#fff}
+  .day{display:block!important;page-break-inside:avoid;margin-bottom:24px}
+  .detail{display:block!important;border-color:#bbb}
+  .bar,.panel,.pool,.dayhead,.flights{border-color:#bbb;background:#fff}
   a{color:#111}
 }
 </style>
@@ -230,39 +210,51 @@ footer{margin-top:38px;font-size:12.5px;color:var(--dimmer);border-top:1px solid
 <div class="wrap">
 
   <header class="hero">
-    <svg class="disc" viewBox="0 0 100 100" aria-hidden="true">
-      <g class="spin">
-        <circle cx="50" cy="50" r="48" fill="#120B24" stroke="#FF3E7F" stroke-width="1.2"/>
-        <circle cx="50" cy="50" r="39" fill="none" stroke="rgba(253,247,234,.16)" stroke-width=".7"/>
-        <circle cx="50" cy="50" r="32" fill="none" stroke="rgba(253,247,234,.14)" stroke-width=".7"/>
-        <circle cx="50" cy="50" r="25" fill="none" stroke="rgba(253,247,234,.12)" stroke-width=".7"/>
-        <circle cx="50" cy="50" r="17" fill="#2ED9E4"/>
-        <circle cx="50" cy="50" r="2.6" fill="#120B24"/>
-        <path d="M50 33 a17 17 0 0 1 17 17" stroke="#FFC13B" stroke-width="3" fill="none"/>
-      </g>
-    </svg>
-    <p class="kicker">Three days off, no footy</p>
+    <svg class="disc" viewBox="0 0 100 100" aria-hidden="true"><g class="spin">
+      <circle cx="50" cy="50" r="48" fill="#120B24" stroke="#FF3E7F" stroke-width="1.2"/>
+      <circle cx="50" cy="50" r="39" fill="none" stroke="rgba(253,247,234,.16)" stroke-width=".7"/>
+      <circle cx="50" cy="50" r="32" fill="none" stroke="rgba(253,247,234,.14)" stroke-width=".7"/>
+      <circle cx="50" cy="50" r="25" fill="none" stroke="rgba(253,247,234,.12)" stroke-width=".7"/>
+      <circle cx="50" cy="50" r="17" fill="#2ED9E4"/><circle cx="50" cy="50" r="2.6" fill="#120B24"/>
+      <path d="M50 33 a17 17 0 0 1 17 17" stroke="#FFC13B" stroke-width="3" fill="none"/>
+    </g></svg>
+    <p class="kicker">Op shops, Reverb, the Yarra Valley</p>
     <h1>Mel<span class="b">bourne</span><span class="c">2026</span></h1>
-    <div class="dates">
-      <span class="chip">Tue 22 Sep — land late</span>
-      <span class="chip">Sat 26 Sep — fly home</span>
-      <span class="chip hot">Grand Final week</span>
-    </div>
     <div class="count"><b id="cd">—</b><span id="cdl">days until wheels up</span></div>
   </header>
 
+  <div class="flights">
+    <h3>Flights</h3>
+    <div class="frow">
+      <span class="fno" style="color:var(--cyan)">JQ635</span>
+      <span class="fbody"><b>Tue 22 Sep</b> · Brisbane to Melbourne · both of you</span>
+      <span class="ftime">8:05pm</span>
+    </div>
+    <div class="frow">
+      <span class="fno" style="color:var(--fluoro)">VA353</span>
+      <span class="fbody"><b>Sat 26 Sep</b> · Melbourne to Brisbane · Westy</span>
+      <span class="ftime">8:40pm</span>
+    </div>
+    <div class="frow">
+      <span class="fno" style="color:var(--marigold)">JQ ···</span>
+      <span class="fbody"><b>Sat 26 Sep</b> · Melbourne to Brisbane · Kathy · flight number to confirm</span>
+      <span class="ftime">9:10pm</span>
+    </div>
+    <p class="flock">Locked in. Separate flights home, 30 minutes apart, so one trip to the airport covers both.</p>
+  </div>
+
   <div class="alert">
-    <h3>Read this bit first</h3>
-    <p>Your trip lands inside AFL Grand Final week. You don't care about the footy, but the city does, and it changes three things.</p>
+    <h3>Three things to know</h3>
     <ul>
-      <li><b>Reverb is closed Tuesdays and Wednesdays.</b> It has been moved to Friday afternoon, which also puts a vinyl exhibition directly before your live music night.</li>
-      <li><b>Friday 25 Sep is a Victorian public holiday.</b> The Grand Final Parade runs through the city from about 9am. Expect road closures, packed trams and public-holiday surcharges on food.</li>
-      <li><b>Saturday is Grand Final day.</b> 100,000 people head to the MCG from late morning. Book lunch on the western side of town and leave early for the airport.</li>
+      <li><b>Reverb is closed Tuesdays and Wednesdays.</b> That's why it sits on Thursday with the galleries — it's open 11am to 5pm that day, so it needs to be booked for early afternoon, not late.</li>
+      <li><b>Friday 25 Sep is a Victorian public holiday</b> — Grand Final eve. The parade shuts down the city from about 9am, which makes a day out in the wine country the smartest thing you could possibly be doing.</li>
+      <li><b>Saturday is Grand Final day</b> and 100,000 people head to the MCG from late morning. Your flights aren't until the evening, so you've got a full day — just keep it on the western side of town.</li>
     </ul>
   </div>
 
   <section>
     <div class="sechead"><h2>The plan</h2><div class="rule"></div></div>
+    <p class="lede">Tap any bar to open it up. The minus button drops it into that day's options list at the bottom, and the plus button there puts it back at whatever time you like.</p>
     <nav class="daynav" id="daynav" role="tablist" aria-label="Days"></nav>
     <div id="days"></div>
   </section>
@@ -273,249 +265,366 @@ footer{margin-top:38px;font-size:12.5px;color:var(--dimmer);border-top:1px solid
 
   <section>
     <div class="sechead"><h2>Your details</h2><div class="rule"></div></div>
-    <p style="margin:0 0 14px;font-size:14.5px;color:var(--dim)">Type straight into these. Everything saves to this device as you go.</p>
     <div class="grid" id="essentials"></div>
-  </section>
-
-  <section>
-    <div class="sechead"><h2>Also on while you're here</h2><div class="rule"></div></div>
-    <div class="also" id="also"></div>
   </section>
 
   <section>
     <div class="sechead"><h2>Before you go</h2><div class="rule"></div></div>
     <div class="panel">
       <ul class="check" id="check"></ul>
-      <div class="addrow" style="margin-top:12px">
-        <input type="text" id="newcheck" placeholder="Add something to remember">
+      <div class="arow" style="margin-top:12px">
+        <input type="text" id="newcheck" class="grow" placeholder="Add something to remember">
         <button class="btn ghost" id="addcheck">Add</button>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>Built for Westy &amp; Mrs West. Opening hours, prices and gig listings change — reconfirm anything you're relying on. Venue details sourced from Google Places; exhibition dates from ACMI and NGV.</p>
+    <p>Hours, prices and tour availability change, and Friday is a public holiday — reconfirm anything you're relying on. Venue details from Google Places; exhibition dates from ACMI and NGV.</p>
   </footer>
 </div>
 
-<div class="bar">
-  <div class="in">
-    <span class="st" id="status">Ready</span>
-    <button class="btn ghost" id="print">Print</button>
-    <button class="btn ghost" id="export">Backup</button>
-    <button class="btn pink" id="cloud" hidden>Sync</button>
-  </div>
-</div>
+<div class="bar-fixed"><div class="in">
+  <span class="st" id="status">Ready</span>
+  <button class="btn ghost" id="print">Print</button>
+  <button class="btn ghost" id="export">Backup</button>
+  <button class="btn pink" id="cloud" hidden>Sync</button>
+</div></div>
 
 <script>
 /* ============================================================
-   Melbourne trip — data
+   DATA — edit here. Each day has items; on:true starts in the
+   timeline, on:false starts in that day's options list.
+     t = time (24h)   s = short bar text   d = expanded detail
    ============================================================ */
 const SEED = {
-  meta:{ version:1, departISO:"2026-09-26T14:00:00+10:00" },
+  meta:{ departISO:"2026-09-26T20:40:00+10:00" },
 
   essentials:{
-    flightOut:{label:"Flight down (BNE → MEL)", v:""},
-    flightOutTime:{label:"Lands", v:"2026-09-22T22:40"},
-    flightHome:{label:"Flight home (MEL → BNE)", v:""},
-    flightHomeTime:{label:"Departs", v:"2026-09-26T17:00"},
     hotel:{label:"Hotel", v:""},
     hotelAddr:{label:"Hotel address", v:""},
     hotelConf:{label:"Booking reference", v:""},
-    transferIn:{label:"Airport → hotel", v:"SkyBus to Southern Cross, then 5 min taxi"},
-    transferOut:{label:"Hotel → airport", v:""},
-    myki:{label:"Myki / travel notes", v:"Tap on with a card or phone — free tram zone covers the whole CBD"},
+    transferIn:{label:"Airport to hotel", v:"SkyBus to Southern Cross, then short taxi"},
+    transferOut:{label:"Hotel to airport", v:"SkyBus from Southern Cross, leave 6:15pm"},
+    car:{label:"Hire car or rideshare plan", v:""},
+    myki:{label:"Travel notes", v:"Free tram zone covers the whole CBD. Tap on with a card or phone outside it."},
     notes:{label:"Anything else", v:"", big:true}
   },
 
   days:[
-    {
-      id:"tue", name:"Tue 22", title:"Land late", sub:"Airport run and bed",
-      tag:{t:"Arrival", c:"ok"},
-      slots:[
-        { when:"Evening", h:"Wheels down at Tullamarine",
-          p:"Melbourne Airport has no train. Two sensible ways into town, both fine late at night.",
-          note:"Flight number + landing time" },
-        { when:"+30 min", h:"Get to the hotel",
-          p:"SkyBus runs around the clock from Terminals 1–4 to Southern Cross, roughly every 10–30 minutes depending on the hour, about 30 minutes door to door, and lands you in the free tram zone. A taxi or rideshare is 25–45 minutes and typically $65–85 with the airport toll.",
-          opts:[
-            {n:"SkyBus", m:"~$25pp", w:"Cheapest, runs 24/7, drops at Southern Cross where the free tram zone starts.", url:"https://www.skybus.com.au/"},
-            {n:"Taxi or Uber", m:"$65–85", w:"Worth it after a late flight with bags. Rank is outside arrivals.", url:""},
-            {n:"Hotel transfer", m:"varies", w:"Ask when you book — some CBD hotels bundle it cheaply.", url:""}
-          ],
-          note:"Which way you went, and what it cost" }
-      ]
-    },
-    {
-      id:"wed", name:"Wed 23", title:"Galleries, then a long dinner", sub:"NGV double-header, laneways, one big table",
-      tag:{t:"Art day", c:"ok"},
-      slots:[
-        { when:"10:00", h:"NGV International — Cartier",
-          p:"180 St Kilda Road, 10am–5pm. The Melbourne Winter Masterpieces show runs to 4 October and is ticketed — book a timed slot before you fly. Over 300 pieces, and it made Time Out's global list of shows worth travelling for this year.",
-          p2:"The rest of NGV International is free. Go and lie on the floor under Leonard French's stained-glass ceiling in the Great Hall. Nobody regrets it.",
-          opts:[], note:"Cartier booking time" },
-        { when:"12:30", h:"Lunch without leaving the art",
-          p:"Gallery Kitchen or the Garden Restaurant inside NGV International, or walk eight minutes across the river and eat at Hero at ACMI in Fed Square.", note:"" },
-        { when:"14:00", h:"NGV Australia — Margaret Preston",
-          p:"The Ian Potter Centre, Federation Square. Free entry to the Australian collection, and a Margaret Preston survey running through spring. The First Nations galleries on the ground floor are the strongest thing in the building.",
-          warn:"Reverb is in the same square but closed Tuesdays and Wednesdays. It's on Friday's plan instead.", note:"" },
-        { when:"16:00", h:"Laneways, on foot",
-          p:"Hosier Lane for street art, then the Nicholas Building on the corner of Swanston and Flinders for artist studios and the Cathedral Arcade's leadlight dome. Anna Schwartz Gallery and Flinders Lane Gallery are both a few doors apart on Flinders Lane.", note:"" },
-        { when:"19:00", h:"Dinner — pick one",
-          p:"All three are a short walk from the middle of town. Book now; Wednesday of Grand Final week is busier than a normal Wednesday.",
-          opts:[
-            {n:"Gimlet at Cavendish House", m:"33 Russell St · $$$$", w:"Andrew McConnell's grand room — marble, martinis, wood-fired everything. The most Melbourne of the three.", url:"https://gimlet.melbourne/", map:"https://maps.google.com/?cid=14911372569621647140"},
-            {n:"Reine & La Rue", m:"380 Collins St · $$$$", w:"Two-hat French in the old Money Order Office. Order oysters, duck and a soufflé and take three hours over it.", url:"https://reineandlarue.melbourne/", map:"https://maps.google.com/?cid=16110991645211682595"},
-            {n:"Maha", m:"21 Bond St · $$$", w:"Shane Delia's Middle Eastern basement. Louder, looser, brilliant lamb shoulder. Best value of the three.", url:"http://maharestaurant.com.au/", map:"https://maps.google.com/?cid=583443337823702668"}
-          ],
-          note:"Booking time and reference" }
-      ]
-    },
-    {
-      id:"thu", name:"Thu 24", title:"Op shops, then Greek", sub:"Sydney Road north, or Chapel Street south",
-      tag:{t:"Treasure hunt", c:"ok"},
-      slots:[
-        { when:"09:30", h:"Pick a side of town",
-          p:"Don't try both. North is grittier and cheaper with better bargains. South is more curated, more vintage-boutique, higher prices.",
-          opts:[
-            {n:"North — Sydney Road, Brunswick", m:"recommended", w:"Tram 19 from Elizabeth Street, 20 minutes. Savers at 330 Sydney Rd is the giant. Vinnies at 107, Salvos and a dozen smaller shops in between. Roll on to Lygon Street, Brunswick East afterwards.", map:"https://maps.google.com/?cid=17773263866789277204"},
-            {n:"South — Chapel Street, Prahran & Windsor", m:"alternative", w:"Tram 72 or 78. Chapel Street Bazaar at 217 is a two-storey warren of dealers. Sacred Heart Mission op shop at 262 and Salvos at 291 are both big. Greville Street for records.", map:"https://maps.google.com/?cid=14146860985999742807"},
-            {n:"Fitzroy & Collingwood", m:"third option", w:"Smith Street and Brunswick Street for curated vintage rather than true op shops. Better if you want quality over volume.", url:""}
-          ],
-          note:"Which route you chose" },
-        { when:"12:30", h:"Lunch on the strip",
-          p:"If you're on Sydney Road, A1 Bakery is the institution — Lebanese, cheap, enormous. On Chapel Street, duck into Greville Street instead of eating on Chapel itself.",
-          warn:"Epic Vintage at 37 Sydney Road only opens Friday to Sunday, so it's out on Thursday. Check hours for the smaller shops before you walk.", note:"" },
-        { when:"15:30", h:"Records, while you're out there",
-          p:"Melbourne has more record shops per head than any city on earth. Northside Records in Fitzroy, Round and Round in Brunswick, Basement Discs in Block Place in the city. Good warm-up for Friday's exhibition.", note:"" },
-        { when:"18:30", h:"Greek dinner — pick one",
-          p:"Melbourne's Greek food is a proper reason to be here, not a novelty.",
-          opts:[
-            {n:"Taverna", m:"434 Lygon St, Brunswick East · $$$", w:"Modern taverna from Angie Giannakodakis. The octopus and the lamb are the reasons people come back. Ten minutes from the Sydney Road op shops — the obvious pairing if you go north. Open from 5pm.", url:"http://www.ourtaverna.com/", map:"https://maps.google.com/?cid=12991507490394512450"},
-            {n:"Kafeneion", m:"161 Spring St · $$", w:"Upstairs at the old Melbourne Supper Club, opposite Parliament. Athenian home cooking — sweetbreads, slow lamb, stuffed capsicum. Loud room, so ask for an alcove. 5pm to 11pm.", url:"https://www.kafeneion.com.au/", map:"https://maps.google.com/?cid=7845530188048942161"},
-            {n:"Stalactites", m:"177 Lonsdale St · $$", w:"Open since 1978, cave ceiling, open to 2am on Fridays. No bookings for under six, so expect 15–30 minutes in the queue. Pure institution.", url:"http://www.stalactites.com.au/", map:"https://maps.google.com/?cid=9792852267985768242"}
-          ],
-          note:"Booking time and reference" }
-      ]
-    },
-    {
-      id:"fri", name:"Fri 25", title:"Spa, Reverb, live music", sub:"Slow start, loud finish",
-      tag:{t:"Public holiday", c:"gf"},
-      slots:[
-        { when:"All day", h:"Know what the city is doing",
-          p:"Grand Final Friday is a Victorian public holiday. The parade starts around 9am at Melbourne Park and runs through the sporting precinct past Birrarung Marr to Yarra Park, so the riverside edge of the city is chaos until early afternoon. Footy Fest is running free in Yarra Park all day.",
-          warn:"Ring your spa to confirm public-holiday hours, and expect a 10–15% surcharge on food and drink today.", note:"" },
-        { when:"10:00", h:"Spa — pick one",
-          p:"Book a couples treatment now. Public holiday plus long weekend means these fill.",
-          opts:[
-            {n:"IOMI Spa at the Sheraton", m:"27 Little Collins St · 5.0★", w:"Pool and steam room included — get there 45 minutes early and use them. Hot stone and 90-minute options, tea and snacks after.", url:"https://www.iomispa.com.au/", map:"https://maps.google.com/?cid=8855938599399185458"},
-            {n:"V Hotel Spa", m:"630 Little Collins St · 4.8★", w:"Lower ground of the Savoy. Their 2.5-hour package pairs a deep tissue massage with a facial — closest thing to a proper half-day reset.", url:""},
-            {n:"Sensu Spa", m:"570 Bourke St · 4.8★", w:"Japanese-style, facials plus body scrub packages. Good if you want a facial to be the main event rather than the add-on.", url:""}
-          ],
-          note:"Spa booking time and treatment" },
-        { when:"15:00", h:"Reverb at ACMI",
-          p:"Federation Square, open 11am to 7pm on Fridays. $25 full, $22 concession, plus a $1 booking fee online. Allow at least an hour; most people stay longer.",
-          p2:"It's the big one — works by Stan Douglas, William Kentridge, Jeremy Deller, Virgil Abloh, Jenn Nkiru and Carsten Nicolai, a sculptural sound system, Technics decks loaded with remixable loops, and a six-hour jam film staged inside a rebuild of The Church studio in New York. The Listening Room is an acoustically tuned space where you pick a record from the collection and just sit with it.",
-          win:"Ask about the after-hours Listening Room sessions — one-off performances for Reverb ticketholders, capped at 60 people. If one is on tonight, that's your live music sorted and it beats anything else on this list.",
-          opts:[], note:"Reverb booking time" },
-        { when:"18:00", h:"Eat before the music",
-          p:"Keep it near the venue and keep it quick — you've got a big room to get to. Anything on Hardware Lane or Little Bourke works.", note:"" },
-        { when:"20:00", h:"Live music — pick one",
-          p:"Check each venue's gig listing about a fortnight out, then lock it in. Friday of Grand Final weekend sells well.",
-          opts:[
-            {n:"Paris Cat Jazz Club", m:"6 Goldie Pl · 4.7★", w:"Tiny laneway basement, the best-rated music room in the city. Open 5:30pm till midnight Friday. You may share a table — it's part of the charm.", url:"https://www.pariscat.com.au/", map:"https://maps.google.com/?cid=1851620412301239215"},
-            {n:"Bird's Basement", m:"11 Singers Ln · 4.5★", w:"Sister club to New York's Birdland. Dinner-and-show format, two sets a night, serious international bookings. Book a front table or you'll be behind someone's head.", url:"https://birdsbasement.com/", map:"https://maps.google.com/?cid=12186055857628253263"},
-            {n:"The Night Cat", m:"137 Johnston St, Fitzroy · 4.5★", w:"Bands in the round on a 360-degree stage, open till 3am. This is the one if you want to dance rather than sit.", url:"http://www.thenightcat.com.au/", map:"https://maps.google.com/?cid=11336844158458165483"}
-          ],
-          note:"Act, set time and ticket reference" }
-      ]
-    },
-    {
-      id:"sat", name:"Sat 26", title:"Lunch, then home", sub:"Move early — the whole city is heading to the MCG",
-      tag:{t:"Grand Final day", c:"gf"},
-      slots:[
-        { when:"Morning", h:"Check out and store the bags",
-          p:"Most CBD hotels will hold luggage after checkout. Do it before 10am — the lobby gets busy.",
-          warn:"Bounce is at 2:30pm. Trams and trains fill from about 11am, and the streets around the MCG and Fed Square are the worst of it.", note:"" },
-        { when:"12:00", h:"Last lunch — pick one",
-          p:"All three take walk-ins, but book if you can. Higher Ground is the smart logistical play: it's on the western edge of the city, away from the football, and six minutes' walk from the SkyBus at Southern Cross.",
-          opts:[
-            {n:"Higher Ground", m:"650 Little Bourke St · 7am–5pm", w:"A converted powerstation with a ceiling like a cathedral. Best coffee of the three and the easiest exit to the airport.", url:"https://highergroundmelbourne.com.au/", map:"https://maps.google.com/?cid=5606829168410894815"},
-            {n:"Supernormal", m:"180 Flinders Ln · from 11:30am", w:"Andrew McConnell again. Order the lobster roll, split the dumplings, be done in an hour.", url:"http://www.supernormal.net.au/", map:"https://maps.google.com/?cid=16155669754805859178"},
-            {n:"Chin Chin", m:"125 Flinders Ln · from 11am", w:"Loud, fast, fun, walk-ins from opening. Closest to the MCG side of town, so go early if you pick this one.", url:"https://www.chinchin.melbourne/", map:"https://maps.google.com/?cid=1357286203979728317"}
-          ],
-          note:"Lunch booking" },
-        { when:"~14:00", h:"Head for Tullamarine",
-          p:"Normally you'd allow 90 minutes before a domestic flight. Today, make it closer to two and a half hours door to gate. SkyBus from Southern Cross is the most predictable option because it doesn't sit in the same traffic a taxi does.",
-          note:"Leave-the-hotel time" }
-      ]
-    }
-  ],
+  /* ------------------------------ TUESDAY ------------------------------ */
+  {
+    id:"tue", name:"Tue 22", title:"Land late", sub:"Airport run, then bed",
+    tag:{t:"Arrival", c:"ok"},
+    items:[
+      { id:"t1", t:"20:05", on:true, locked:true, s:"JQ635 lands at Tullamarine",
+        d:"Both of you on the same flight down. Melbourne Airport has no train line, so it's SkyBus or a car — nothing else.",
+        meta:"Terminal 4, Jetstar" },
+      { id:"t2", t:"20:45", on:true, s:"SkyBus into the city",
+        d:"Runs around the clock, every 10 to 30 minutes depending on the hour, about 30 minutes to Southern Cross. Roughly $25 each. Southern Cross is inside the free tram zone, so the last leg to the hotel costs nothing if you're in the CBD grid.",
+        meta:"~$25pp · 30 min", url:"https://www.skybus.com.au/" },
+      { id:"t3", t:"21:30", on:true, s:"Check in and drop the bags",
+        d:"Anything else tonight is a bonus. You've got three full days ahead." },
+      { id:"t4", t:"21:00", on:false, s:"Taxi or Uber instead of the bus",
+        d:"25 to 45 minutes, typically $65 to $85 including the airport toll. Worth it after a late flight with luggage. Rank is directly outside arrivals.",
+        meta:"$65–85" },
+      { id:"t5", t:"22:15", on:false, s:"Late supper in Chinatown",
+        d:"Little Bourke Street runs late every night of the week. Shanghai Street or Supper Inn if you want something proper rather than something quick.",
+        meta:"open late" },
+      { id:"t6", t:"22:30", on:false, s:"A quiet nightcap at Siglo",
+        d:"Rooftop above the European on Spring Street, heaters, city views, open late. Civilised way to admit you've arrived.",
+        meta:"161 Spring St" }
+    ]
+  },
 
-  also:[
-    {c:"pk", t:"The Vinyl Factory: Reverb", w:"ACMI, Federation Square · until 4 October", d:"Closed Tuesdays and Wednesdays. Open to 7pm Friday and Saturday. Your Friday afternoon.", l:"https://www.acmi.net.au/whats-on/the-vinyl-factory-reverb/"},
-    {c:"", t:"Cartier", w:"NGV International · until 4 October · ticketed", d:"The largest Cartier show ever staged in Australia, made with the V&A. Time Out's global editors put it on their list of exhibitions worth travelling for in 2026.", l:"https://www.ngv.vic.gov.au/exhibition/cartier/"},
-    {c:"cy", t:"Margaret Preston", w:"NGV Australia, Federation Square", d:"Running through spring at the Ian Potter Centre. Pairs neatly with the free First Nations galleries downstairs.", l:"https://www.ngv.vic.gov.au/whats-on/exhibitions/"},
-    {c:"cy", t:"Australian Centre for Contemporary Art", w:"111 Sturt St, Southbank · free", d:"Small, sharp, free, and a ten-minute walk from NGV International. Worth an hour on Wednesday if the galleries haven't worn you out.", l:"https://acca.melbourne/"},
-    {c:"", t:"Heide Museum of Modern Art", w:"Bulleen · 40 min from the city", d:"The Reeds' old farmhouse, a sculpture park and the birthplace of Australian modernism. A half-day if you decide to swap out an op shop route.", l:"https://www.heide.com.au/"},
-    {c:"pk", t:"Melbourne Fringe", w:"29 September – 18 October", d:"You miss it by three days. Opening Night Gala is at the Capitol Theatre on the 29th. Worth knowing for next time — or worth moving your flights.", l:"https://www.melbournefringe.com.au/"},
-    {c:"", t:"Grand Final Parade & Footy Fest", w:"Parade Fri 25, ~9am · Footy Fest Wed–Sat, Yarra Park, free", d:"Not your thing, but it's why the city looks like that. Useful mainly as a list of streets to avoid on Friday morning.", l:"https://www.mcg.org.au/events/2026/september/2026-afl-grand-final"},
-    {c:"cy", t:"Record shopping", w:"Northside Records, Basement Discs, Round and Round", d:"Fitzroy, Block Place and Brunswick respectively. Melbourne has more vinyl stores per capita than any city in the world.", l:""},
-    {c:"", t:"State Library Victoria", w:"328 Swanston St · free", d:"The La Trobe Reading Room dome is one of the great rooms in the country, and it costs nothing. Ten minutes if you're passing, an hour if you're not careful.", l:"https://www.slv.vic.gov.au/"}
+  /* ------------------------------ WEDNESDAY ------------------------------ */
+  {
+    id:"wed", name:"Wed 23", title:"Op shops all the way to Tbilisi", sub:"Five suburbs southeast, finishing with Georgian food",
+    tag:{t:"Treasure hunt", c:"ok"},
+    items:[
+      { id:"w0", t:"09:15", on:true, s:"Breakfast, then work out the wheels",
+        d:"Tbilisi is in Bentleigh East, 20km southeast of the city. The op shop run threads out that way through Windsor, Elsternwick, Carnegie and Bentleigh — five suburbs in a day.",
+        warn:"Doing all five on trams and trains is doable but slow, and most op shops shut at 5pm. A hire car for the day, or rideshare hops between strips, will buy you two extra shops. Decide this the night before." },
+      { id:"w1", t:"10:15", on:true, s:"Chapel Street Bazaar, Prahran",
+        d:"217 Chapel Street, opens 11am. A two-storey warren of independent dealers — vintage clothing, furniture, jewellery, glassware, old coins, genuine oddities. Allow an hour minimum and don't expect op shop prices; this is dealer territory.",
+        meta:"217 Chapel St · from 11am", map:"https://maps.google.com/?cid=14146860985999742807" },
+      { id:"w2", t:"11:30", on:true, s:"Windsor op shops — Chapel Street strip",
+        d:"Sacred Heart Mission at 262 Chapel Street is big and well stocked with clothing, homewares and furniture, open 10am to 6pm. Salvos Prahran at 291 Chapel is a bright new store, 9:30am to 5:30pm. Both within a few minutes' walk of the Bazaar.",
+        meta:"262 & 291 Chapel St", map:"https://maps.google.com/?cid=8879213891509854542" },
+      { id:"w3", t:"12:30", on:true, s:"Lunch on Greville Street",
+        d:"Duck off Chapel into Greville Street rather than eating on the main drag. Better food, fewer crowds, and a record shop to browse while you wait.",
+        meta:"Greville St, Prahran" },
+      { id:"w4", t:"13:30", on:true, s:"Elsternwick — three op shops in one block",
+        d:"The best-value stop of the day. RSPCA Op Shop at 418 Glen Huntly Road is exceptionally well run and open seven days. Sacred Heart at 486 has just been renovated across two shopfronts. Posh Opp Shoppe at 484 sits between them. Three shops, one short walk.",
+        meta:"418, 484 & 486 Glen Huntly Rd", map:"https://maps.google.com/?cid=6042266097404375502" },
+      { id:"w5", t:"14:45", on:true, s:"Carnegie — Koornang Road",
+        d:"Salvos at 154 Koornang Road is the pick, consistently good stock and fair pricing, open to 5pm. Red Cross at 22 Koornang closes at 4pm and is smaller.",
+        meta:"154 Koornang Rd · to 5pm", map:"https://maps.google.com/?cid=4784103301826150810" },
+      { id:"w6", t:"15:45", on:true, s:"Bentleigh — four op shops on Centre Road",
+        d:"Centre Road is the densest strip of the day. Vinnies at 394 has a beautifully curated book section. Salvos at 475 is well organised and easy to shop. Sacred Heart at 271 is the biggest. Brotherhood of St Laurence at 518 leans antique and is priced accordingly, but has the best vinyl and books.",
+        warn:"Almost all of these close at 5pm. Start at the 394 end and work east so you finish closest to dinner.",
+        meta:"271, 394, 475 & 518 Centre Rd", map:"https://maps.google.com/?cid=5030906103898817848" },
+      { id:"w7", t:"17:00", on:true, s:"Savers Heatherton — the big one, open late",
+        d:"430 Warrigal Road, open to 7pm. Warehouse scale, and the only serious option once the charity shops have shut. Ten minutes from the restaurant, so this is your 5 to 6pm slot. Bring the tote bag.",
+        meta:"430 Warrigal Rd · to 7pm", map:"https://maps.google.com/?cid=4213174266395021956" },
+      { id:"w8", t:"18:30", on:true, s:"Dinner at Tbilisi Georgian Restaurant",
+        d:"696 Centre Road, Bentleigh East. Open Wednesday 4pm to 9pm, 4.7 stars. Georgian food done properly — khachapuri, kharcho soup, walnut and cheese eggplant rolls, shashlik, slow-cooked meat with wine and plums. Ask about Georgian wine; qvevri whites are unlike anything else you'll drink.",
+        warn:"Small room and it closes at 9pm, so book ahead and don't arrive at 8:30. Dishes do sell out.",
+        meta:"696 Centre Rd · Wed 4–9pm · 4.7★", map:"https://maps.google.com/?cid=6299010734133284875" },
+      { id:"w9", t:"20:45", on:true, s:"Back to the city",
+        d:"Rideshare is about 30 minutes. On public transport it's a bus to the Frankston line, then a train to Flinders Street — closer to an hour, so check the last services if you linger." },
+      { id:"w10", t:"10:00", on:false, s:"Go north instead — Sydney Road, Brunswick",
+        d:"The alternative route if you'd rather not chase Tbilisi across town. Savers at 330 Sydney Road is the giant and opens to 7pm. Vinnies at 107, Salvos at 740, and Brotherhood of St Laurence at 145 Lygon Street which is huge and light-filled. Tram 19 from Elizabeth Street, 20 minutes.",
+        meta:"330, 107 & 740 Sydney Rd", map:"https://maps.google.com/?cid=15762262272170733796" },
+      { id:"w11", t:"14:00", on:false, s:"Fitzroy and Collingwood vintage",
+        d:"Smith Street and Brunswick Street. Curated vintage rather than true op shops — higher prices, better hit rate. Mutual Muse and Hunter Gatherer are the anchors.",
+        meta:"Smith & Brunswick St" },
+      { id:"w12", t:"19:00", on:false, s:"Swap Tbilisi for Gimlet",
+        d:"33 Russell Street. Andrew McConnell's grand room — marble, martinis, wood-fired everything. The most Melbourne dinner in the city, and a ten-minute walk from most CBD hotels instead of a 30-minute drive.",
+        meta:"33 Russell St · $$$$", url:"https://gimlet.melbourne/", map:"https://maps.google.com/?cid=14911372569621647140" },
+      { id:"w13", t:"19:00", on:false, s:"Swap Tbilisi for Reine & La Rue",
+        d:"380 Collins Street. Two-hat French in the old Money Order Office, one of the grandest dining rooms in the country. Order oysters, duck and a soufflé and take three hours over it.",
+        meta:"380 Collins St · $$$$", url:"https://reineandlarue.melbourne/", map:"https://maps.google.com/?cid=16110991645211682595" },
+      { id:"w14", t:"16:30", on:false, s:"Elsternwick detour — Rippon Lea House",
+        d:"192 Hotham Street, a few minutes from the Glen Huntly Road op shops. A grand 1868 mansion with 14 acres of heritage gardens. Good breather between shops if the day is running ahead of schedule.",
+        meta:"192 Hotham St" }
+    ]
+  },
+
+  /* ------------------------------ THURSDAY ------------------------------ */
+  {
+    id:"thu", name:"Thu 24", title:"Reverb and as many galleries as fit", sub:"Two NGVs, one exhibition you flew here for",
+    tag:{t:"Art day", c:"ok"},
+    items:[
+      { id:"a0", t:"09:15", on:true, s:"Breakfast, then straight to St Kilda Road",
+        d:"Today is the one with hard opening hours in it. Reverb shuts at 5pm on Thursdays and both NGV buildings close at 5pm too, so the order below is deliberate — don't shuffle it without checking.",
+        warn:"Book Cartier and Reverb online before you fly. Both are timed entry and both sell out." },
+      { id:"a1", t:"10:00", on:true, s:"NGV International — Cartier",
+        d:"180 St Kilda Road, doors at 10am. The Melbourne Winter Masterpieces show runs to 4 October: more than 300 pieces made with the V&A, the largest Cartier exhibition ever staged in Australia, including stones worn by Elizabeth Taylor and Rihanna. Time Out's global editors named it one of the exhibitions worth travelling for this year. Allow 90 minutes to two hours.",
+        meta:"180 St Kilda Rd · ticketed · to 4 Oct", url:"https://www.ngv.vic.gov.au/exhibition/cartier/", map:"https://maps.google.com/?cid=3706901207867924052" },
+      { id:"a2", t:"11:45", on:true, s:"The Great Hall ceiling, free",
+        d:"On your way out, lie down on the floor of the Great Hall under Leonard French's stained glass. Fifteen minutes, costs nothing, and it's the thing people remember. The rest of NGV International is free too, including the Pacific galleries." },
+      { id:"a3", t:"12:15", on:true, s:"Lunch at Fed Square",
+        d:"Walk eight minutes across the river. Hero at ACMI is the smart pick because you're about to go into the building anyway — good food, a proper bar, and no transit time.",
+        meta:"ACMI, Fed Square" },
+      { id:"a4", t:"13:30", on:true, s:"Reverb at ACMI — the main event",
+        d:"Federation Square, Thursday 11am to 5pm, $25 full and $22 concession. Works by Stan Douglas, William Kentridge, Jeremy Deller, Jenn Nkiru, Virgil Abloh, Gabriel Moses and Carsten Nicolai. A sculptural sound system, Technics decks loaded with remixable loops, a fantasy rap battle running from Cairo to London, and a six-hour jam film staged inside a rebuild of The Church, the New York studio where Miles Davis and Bob Dylan recorded. The Listening Room is an acoustically tuned space where you choose a record from the collection and just sit with it.",
+        win:"Ask at the desk about the after-hours Listening Room sessions — one-off performances programmed by Triple R's Yasmine Sharaf, for ticketholders only, capped at 60 people. If one lands on Friday night, take it over anything else.",
+        warn:"Allow at least 90 minutes. Closes at 5pm sharp on Thursdays, so 1:30pm is the latest sensible entry.",
+        meta:"Fed Square · $25 · to 4 Oct", url:"https://www.acmi.net.au/whats-on/the-vinyl-factory-reverb/", map:"https://maps.google.com/?cid=1369346269508606116" },
+      { id:"a5", t:"15:15", on:true, s:"NGV Australia — Margaret Preston",
+        d:"The Ian Potter Centre, same square, 30 seconds' walk. Free entry to the Australian collection with a Margaret Preston survey running through spring. The First Nations galleries on the ground floor are the strongest thing in the building — don't skip them for the headline show.",
+        meta:"Fed Square · free · to 5pm", url:"https://www.ngv.vic.gov.au/whats-on/exhibitions/", map:"https://maps.google.com/?cid=11952307198932566743" },
+      { id:"a6", t:"16:45", on:true, s:"Hosier Lane and the Nicholas Building",
+        d:"Cross Flinders Street for Hosier Lane, the street art one everyone photographs. Then the Nicholas Building on the corner of Swanston and Flinders — a 1926 tower full of working artist studios, milliners and bookbinders, with the leadlight dome of Cathedral Arcade at street level. Free, and open until the tenants go home.",
+        meta:"Flinders St · free" },
+      { id:"a7", t:"18:30", on:true, s:"Greek dinner at Kafeneion",
+        d:"161 Spring Street, upstairs in the old Melbourne Supper Club, opposite Parliament. Athenian home cooking — lamb sweetbreads with lemon, whipped cod roe, slow-cooked lamb with wild oregano, stuffed capsicum. Open 5pm to 11pm.",
+        warn:"The main room is loud with no acoustic treatment. Book ahead and ask for one of the alcoves down the back.",
+        meta:"161 Spring St · 5–11pm", url:"https://www.kafeneion.com.au/", map:"https://maps.google.com/?cid=7845530188048942161" },
+      { id:"a8", t:"11:00", on:false, s:"Australian Centre for Contemporary Art",
+        d:"111 Sturt Street, Southbank, free, ten minutes' walk from NGV International. Small, sharp and always current. Two or three shows at a time, an hour is plenty.",
+        meta:"111 Sturt St · free", url:"https://acca.melbourne/", map:"https://maps.google.com/?cid=7669327459589276687" },
+      { id:"a9", t:"11:30", on:false, s:"Buxton Contemporary",
+        d:"Corner of Southbank Boulevard and Dodds Street, next door to ACCA. Free, purpose-built, one serious exhibition at a time. Pair it with ACCA and you've got both in ninety minutes.",
+        meta:"Southbank · free" },
+      { id:"a10", t:"16:00", on:false, s:"Flinders Lane commercial galleries",
+        d:"Anna Schwartz Gallery at 185 Flinders Lane is the serious one — museum-grade shows in a converted warehouse, free. Flinders Lane Gallery is a few doors along. Both close around 5 or 6pm and neither takes long.",
+        meta:"Flinders Lane · free" },
+      { id:"a11", t:"10:00", on:false, s:"Heide Museum of Modern Art",
+        d:"Bulleen, 40 minutes out. The Reeds' farmhouse, the birthplace of Australian modernism, plus a sculpture park and heritage gardens. Open Tuesday to Sunday. This is a half-day commitment and it will cost you one of the NGVs, but it's the most beautiful gallery in Victoria.",
+        meta:"Bulleen · 40 min out", url:"https://www.heide.com.au/", map:"https://maps.google.com/?cid=1071113988390488983" },
+      { id:"a12", t:"17:30", on:false, s:"Basement Discs, Block Place",
+        d:"24 Block Place, down the stairs. Melbourne has more record shops per head than any city in the world and this is the city's best. Natural follow-on from Reverb, and it's on the way to dinner.",
+        meta:"24 Block Place" },
+      { id:"a13", t:"18:30", on:false, s:"Greek at Stalactites instead",
+        d:"177 Lonsdale Street, open since 1978, cave ceiling, serving until 2am on Fridays. No bookings for groups under six, so expect 15 to 30 minutes in the queue. Louder and cheaper than Kafeneion, and an institution.",
+        meta:"177 Lonsdale St · to midnight", url:"http://www.stalactites.com.au/", map:"https://maps.google.com/?cid=9792852267985768242" },
+      { id:"a14", t:"18:30", on:false, s:"Greek at Taverna, Brunswick East",
+        d:"434 Lygon Street. Angie Giannakodakis's modern taverna, the best Greek cooking in the city — octopus on smoky potato purée, lamb shoulder, galaktoboureko. Twenty minutes north of the CBD, open from 5pm.",
+        meta:"434 Lygon St · from 5pm", url:"http://www.ourtaverna.com/", map:"https://maps.google.com/?cid=12991507490394512450" },
+      { id:"a15", t:"17:00", on:false, s:"State Library reading room",
+        d:"328 Swanston Street, free. The La Trobe Reading Room dome is one of the great interiors in the country. Ten minutes if you're passing, an hour if you're not disciplined.",
+        meta:"328 Swanston St · free" }
+    ]
+  },
+
+  /* ------------------------------ FRIDAY ------------------------------ */
+  {
+    id:"fri", name:"Fri 25", title:"Out to the wine country", sub:"Get out of town while the city loses its mind",
+    tag:{t:"Public holiday", c:"hol"},
+    items:[
+      { id:"f0", t:"07:30", on:true, s:"Why today is the right day to leave town",
+        d:"Grand Final Friday is a Victorian public holiday. The parade starts around 9am at Melbourne Park and runs through the sporting precinct past Birrarung Marr to Yarra Park, so the riverside edge of the city is closed off and packed until early afternoon. Being an hour away in a vineyard is the correct response.",
+        warn:"Public holiday means two things: confirm your tour actually operates today when you book, and expect a 10 to 15 percent surcharge anywhere you eat." },
+      { id:"f1", t:"08:30", on:true, s:"Private driver day — Yarra Valley, your own route",
+        d:"The pick of the bunch for two people who like art as much as wine. A chauffeured car for the day, roughly $700 to $900 for six to eight hours, means you choose the stops, stay as long as you like and aren't stuck with fourteen strangers. Build it around Domaine Chandon for sparkling, Oakridge or De Bortoli for the serious wine, Four Pillars Gin in Healesville, and Yarra Valley Dairy for cheese.",
+        win:"Put TarraWarra Museum of Art in the middle of it. A purpose-built contemporary art museum on a vineyard estate near Healesville, open Tuesday to Sunday. Art and wine in the same afternoon is exactly your kind of day and no bus tour will take you there.",
+        meta:"~$700–900 for the car · 6–8 hrs" },
+      { id:"f2", t:"12:30", on:true, s:"Long lunch at a winery",
+        d:"Wherever the morning lands you. Oakridge and De Bortoli both do proper sit-down restaurants with vineyard views. Book this at the same time as the car — public holiday, long weekend, they will be full.",
+        warn:"Book the restaurant separately. Drivers don't do it for you." },
+      { id:"f3", t:"17:30", on:true, s:"Back in the city",
+        d:"Most Yarra Valley days wrap between 4:30pm and 6pm. An hour back down the Melba Highway." },
+      { id:"f4", t:"20:00", on:true, s:"Live music at Paris Cat",
+        d:"6 Goldie Place, a tiny laneway basement and the highest-rated music room in Melbourne at 4.7 stars. Open 5:30pm to midnight on Fridays. You may end up sharing a table with strangers, which is part of the deal.",
+        warn:"Check the listing a fortnight out and buy tickets. Friday of Grand Final weekend sells.",
+        meta:"6 Goldie Pl · 4.7★", url:"https://www.pariscat.com.au/", map:"https://maps.google.com/?cid=1851620412301239215" },
+      { id:"f5", t:"08:00", on:false, s:"Tour option — Australian Wine Tour Co",
+        d:"A long-running Melbourne operator doing full-day Yarra Valley trips with CBD pickup, four wineries and a two-course lunch included. Around $200 to $250 a head. The most hands-off version of the day: someone else drives, pours and books.",
+        meta:"full day · ~$200–250pp" },
+      { id:"f6", t:"08:00", on:false, s:"Tour option — Yarra Valley gourmet small-group ecotour",
+        d:"Hotel pickup around 8am, groups kept genuinely small, and built around food as much as wine — Four Pillars Gin distillery in Healesville, cheese, chocolate, then wineries. Better value than a private car and far better than a coach.",
+        meta:"small group · hotel pickup" },
+      { id:"f7", t:"08:30", on:false, s:"Tour option — half-day Yarra Valley, three wineries",
+        d:"Five hours, three boutique wineries, around sixteen wines, groups capped near fifteen. Around $130 to $170 a head. Choose this one if you want the afternoon and evening back in the city.",
+        meta:"5 hrs · ~$130–170pp" },
+      { id:"f8", t:"08:00", on:false, s:"Tour option — Mornington Peninsula with the hot springs",
+        d:"The other direction, about 90 minutes south. Peninsula cool-climate wineries plus Peninsula Hot Springs, where you soak in geothermal pools in the bush. This is the version that gets you the wine country and the spa day you originally wanted, in one go.",
+        meta:"full day · wine + hot springs" },
+      { id:"f9", t:"20:00", on:false, s:"Music at Bird's Basement instead",
+        d:"11 Singers Lane, sister club to New York's Birdland. Dinner-and-show format with two sets a night and serious international bookings. Book a front table or you'll spend the night behind someone's head.",
+        meta:"11 Singers Ln · 4.5★", url:"https://birdsbasement.com/", map:"https://maps.google.com/?cid=12186055857628253263" },
+      { id:"f10", t:"21:00", on:false, s:"Music at The Night Cat, Fitzroy",
+        d:"137 Johnston Street. Bands in the round on a 360-degree central stage, open until 3am. This is the one if you'd rather dance than sit down.",
+        meta:"137 Johnston St · to 3am", url:"http://www.thenightcat.com.au/", map:"https://maps.google.com/?cid=11336844158458165483" },
+      { id:"f11", t:"19:30", on:false, s:"Reverb Listening Room after-hours session",
+        d:"If ACMI has a session on tonight, this beats every other option on the list. Ticketholders only, 60 people, one-off performances in an acoustically tuned room. Ask at the desk on Thursday and book on the spot.",
+        win:"Only available to Reverb ticketholders, so ask while you're there on Thursday." },
+      { id:"f12", t:"10:00", on:false, s:"Stay in town and have the spa day",
+        d:"If the wine trip doesn't happen, IOMI Spa at the Sheraton on Little Collins is the best in the city at 5.0 stars, with a pool and steam room included — arrive 45 minutes early and use them. V Hotel Spa on Little Collins and Sensu on Bourke Street are the next two.",
+        warn:"Ring to confirm public holiday hours before you count on it.",
+        meta:"27 Little Collins St · 5.0★", url:"https://www.iomispa.com.au/", map:"https://maps.google.com/?cid=8855938599399185458" },
+      { id:"f13", t:"18:30", on:false, s:"Dinner before the music",
+        d:"Keep it near the venue and keep it quick. Hardware Lane and Little Bourke Street are both five minutes from Goldie Place and neither needs a booking made months out.",
+        meta:"Hardware Ln" }
+    ]
+  },
+
+  /* ------------------------------ SATURDAY ------------------------------ */
+  {
+    id:"sat", name:"Sat 26", title:"A full last day", sub:"Evening flights, so there's more time than you think",
+    tag:{t:"Grand Final day", c:"gf"},
+    items:[
+      { id:"s0", t:"09:00", on:true, s:"Check out, leave the bags",
+        d:"Almost every CBD hotel will hold luggage after checkout. Do it before 10am while the lobby is still calm.",
+        warn:"Bounce is 2:30pm at the MCG. The city fills from about 11am and the streets around the ground and Fed Square are the worst of it. Stay west of Swanston Street today and you'll barely notice." },
+      { id:"s1", t:"09:45", on:true, s:"Breakfast at Higher Ground",
+        d:"650 Little Bourke Street, from 7:30am on Saturdays. A converted powerstation with a ceiling like a cathedral, the best coffee in this part of town, and six minutes' walk from the SkyBus terminal you'll need later.",
+        meta:"650 Little Bourke St · from 7:30am", url:"https://highergroundmelbourne.com.au/", map:"https://maps.google.com/?cid=5606829168410894815" },
+      { id:"s2", t:"11:30", on:true, s:"Couples massage at IOMI Spa",
+        d:"Level 3 of the Sheraton, 27 Little Collins Street, 5.0 stars from 750 reviews. Pool and steam room come with the treatment, so get there early and use them. Ninety-minute hot stone or a massage-and-facial pairing, tea and snacks afterwards. The right way to spend Grand Final morning.",
+        warn:"Book this now. It's the busiest Saturday of the Melbourne year.",
+        meta:"27 Little Collins St · 5.0★", url:"https://www.iomispa.com.au/", map:"https://maps.google.com/?cid=8855938599399185458" },
+      { id:"s3", t:"13:45", on:true, s:"Last lunch at Supernormal",
+        d:"180 Flinders Lane, from 11:30am. Andrew McConnell's place — order the lobster roll, split the dumplings, drink something cold. Walk-ins possible but book if you can.",
+        meta:"180 Flinders Ln · $$$", url:"http://www.supernormal.net.au/", map:"https://maps.google.com/?cid=16155669754805859178" },
+      { id:"s4", t:"15:30", on:true, s:"Loose afternoon",
+        d:"Whatever didn't fit earlier in the week. The options list below has the best of the leftovers, and the city will be eerily quiet between 2:30pm and 6pm while the football is on." },
+      { id:"s5", t:"18:15", on:true, s:"Collect bags and get to Southern Cross",
+        d:"SkyBus from Southern Cross is the predictable option today because it doesn't sit in the same traffic a taxi does. Allow two and a half hours door to gate rather than the usual ninety minutes.",
+        meta:"SkyBus · ~30 min", url:"https://www.skybus.com.au/" },
+      { id:"s6", t:"20:40", on:true, locked:true, s:"VA353 — Westy departs",
+        d:"Virgin Australia to Brisbane. Terminal 3.", meta:"Virgin · T3" },
+      { id:"s7", t:"21:10", on:true, locked:true, s:"JQ — Kathy departs",
+        d:"Jetstar to Brisbane, flight number still to confirm. Terminal 4. Thirty minutes after Westy, so travel out together and part at security.",
+        meta:"Jetstar · T4 · number TBC" },
+      { id:"s8", t:"11:00", on:false, s:"Reverb, second pass",
+        d:"Open 11am to 7pm on Saturdays, the latest all week. If Thursday felt rushed, or if you want an hour in the Listening Room without watching the clock, today is actually the better day for it.",
+        meta:"Fed Square · 11am–7pm", url:"https://www.acmi.net.au/whats-on/the-vinyl-factory-reverb/", map:"https://maps.google.com/?cid=1369346269508606116" },
+      { id:"s9", t:"09:00", on:false, s:"Queen Victoria Market",
+        d:"Corner of Elizabeth and Victoria Streets, Saturday 6am to 3pm. Deli hall for cheese and smallgoods you can actually fly home with, plus the sheds for everything else. Ten minutes' walk from the top of the city.",
+        meta:"Sat 6am–3pm" },
+      { id:"s10", t:"13:00", on:false, s:"Lunch at Chin Chin instead",
+        d:"125 Flinders Lane, walk-ins from 11am, loud and fast and fun. Closer to the football side of town though, so go early if you pick it.",
+        meta:"125 Flinders Ln", url:"https://www.chinchin.melbourne/", map:"https://maps.google.com/?cid=1357286203979728317" },
+      { id:"s11", t:"15:00", on:false, s:"The Block Arcade and Royal Arcade",
+        d:"Collins Street and Bourke Street Mall. 1890s glass-roofed arcades, mosaic floors, Hopetoun Tea Rooms in the middle of it. Fifteen minutes of proper Melbourne and entirely indoors if the weather turns.",
+        meta:"Collins St · free" },
+      { id:"s12", t:"16:00", on:false, s:"City Circle tram, free",
+        d:"Route 35, free, runs a loop of the CBD in old W-class trams with recorded commentary. A dignified way to see the city when your legs have given up and your bags are in a cupboard.",
+        meta:"Route 35 · free" },
+      { id:"s13", t:"11:00", on:false, s:"Spa alternatives",
+        d:"V Hotel Spa on the lower ground of the Savoy at 630 Little Collins does a 2.5-hour massage and facial package. Sensu on Bourke Street is Japanese-style with couples packages. Both 4.8 stars.",
+        meta:"4.8★ both" }
+    ]
+  }
   ],
 
   check:[
+    "Confirm Kathy's Jetstar flight number",
     "Book Cartier timed entry at NGV",
-    "Book Reverb at ACMI for Friday afternoon",
-    "Book Wednesday dinner",
-    "Book Thursday Greek dinner",
-    "Book the spa — confirm public holiday hours",
-    "Check Friday gig listings and buy tickets",
-    "Book Saturday lunch",
-    "Set up myki on phone or pack a contactless card",
-    "Pack a jacket — Melbourne September is 9–19°C and unreliable",
-    "Empty tote bag for op shop day"
+    "Book Reverb at ACMI for Thursday 1:30pm",
+    "Book Tbilisi for Wednesday — it closes at 9pm",
+    "Book Kafeneion for Thursday, ask for an alcove",
+    "Book the Friday wine tour — confirm it runs on the public holiday",
+    "Book the winery restaurant for Friday lunch",
+    "Buy Friday night music tickets",
+    "Book the Saturday couples massage",
+    "Book Supernormal for Saturday lunch",
+    "Decide on a hire car for Wednesday's op shop run",
+    "Pack an empty tote bag and a jacket — Melbourne September is 9 to 19°C"
   ]
 };
 
 /* ============================================================
    State
    ============================================================ */
-const KEY = "mel2026:v1";
-let S = null;
-let memory = null; // fallback when localStorage is blocked
+const KEY = "mel2026:v2";
+let S = null, memory = null;
 
-function blank(){
-  return { picks:{}, notes:{}, essentials:{}, custom:{}, checked:{}, extraChecks:[] };
-}
+const blank = () => ({ days:{}, notes:{}, essentials:{}, checked:{}, extraChecks:[] });
+
 function load(){
   try{
     const raw = localStorage.getItem(KEY);
     S = raw ? Object.assign(blank(), JSON.parse(raw)) : blank();
-  }catch(e){
-    S = memory || blank();
-    flash("Saving in this tab only — storage is blocked here");
-  }
+  }catch(e){ S = memory || blank(); }
+  SEED.days.forEach(d => {
+    if (!S.days[d.id]){
+      const placed = {};
+      d.items.forEach(it => { if (it.on) placed[it.id] = it.t; });
+      S.days[d.id] = { placed, custom:{} };
+    }
+  });
 }
 let saveTimer;
 function save(){
   memory = S;
   clearTimeout(saveTimer);
-  saveTimer = setTimeout(()=>{
+  saveTimer = setTimeout(() => {
     try{ localStorage.setItem(KEY, JSON.stringify(S)); flash("Saved"); }
     catch(e){ flash("Kept in this tab only"); }
-  }, 250);
+  }, 220);
 }
 function flash(msg){
   const el = document.getElementById("status");
   el.textContent = msg;
   clearTimeout(flash._t);
-  flash._t = setTimeout(()=>{ el.textContent = "All changes saved to this device"; }, 1800);
+  flash._t = setTimeout(() => { el.textContent = "All changes saved to this device"; }, 1700);
 }
-const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+function fmt(t){
+  if (!t || !/^\d{1,2}:\d{2}$/.test(t)) return t || "";
+  let [h, m] = t.split(":").map(Number);
+  const ap = h < 12 ? "am" : "pm";
+  h = h % 12 || 12;
+  return m ? `${h}:${String(m).padStart(2,"0")}${ap}` : `${h}${ap}`;
+}
+
+/* item lookup: seed items + user-created items for a day */
+function catalogue(dayId){
+  const d = SEED.days.find(x => x.id === dayId);
+  const out = {};
+  d.items.forEach(it => out[it.id] = it);
+  Object.values(S.days[dayId].custom || {}).forEach(it => out[it.id] = it);
+  return out;
+}
+const byTime = (a, b) => (a.time || "").localeCompare(b.time || "");
 
 /* ============================================================
-   Render — days
+   Render
    ============================================================ */
 function renderDays(){
   const nav = document.getElementById("daynav");
@@ -532,60 +641,112 @@ function renderDays(){
     const wrap = document.createElement("div");
     wrap.className = "day" + (i === 0 ? " on" : "");
     wrap.id = "day-" + d.id;
-
-    let html = `<div class="dayhead">
+    wrap.innerHTML = `
+      <div class="dayhead">
         <div><h3>${esc(d.title)}</h3><div class="sub">${esc(d.sub)}</div></div>
         <span class="tag ${d.tag.c}">${esc(d.tag.t)}</span>
-      </div><div class="slots">`;
+      </div>
+      <div class="tl" id="tl-${d.id}"></div>
+      <div class="adder">
+        <h5>Add something at a time</h5>
+        <div class="arow">
+          <input type="time" id="at-${d.id}" value="12:00" aria-label="Time">
+          <select class="grow" id="as-${d.id}" aria-label="What to add"></select>
+          <button class="btn sm" data-addsel="${d.id}">Add</button>
+        </div>
+        <div class="arow" style="margin-top:9px">
+          <input type="text" class="grow" id="ax-${d.id}" placeholder="Or type your own — anything at all">
+          <button class="btn ghost sm" data-addown="${d.id}">Add mine</button>
+        </div>
+        <p class="hint">Anything you add sits in the timeline exactly like the rest.</p>
+      </div>
+      <div class="pool" id="pl-${d.id}"></div>`;
+    host.appendChild(wrap);
+    renderTimeline(d.id);
+    renderPool(d.id);
+  });
+}
 
-    d.slots.forEach((s, si) => {
-      const id = d.id + ":" + si;
-      html += `<div class="slot">
-        <div class="when"><span>${esc(s.when)}</span></div>
-        <h4>${esc(s.h)}</h4>
-        ${s.p ? `<p>${esc(s.p)}</p>` : ""}
-        ${s.p2 ? `<p>${esc(s.p2)}</p>` : ""}
-        ${s.warn ? `<p class="warn">${esc(s.warn)}</p>` : ""}
-        ${s.win ? `<p class="win">${esc(s.win)}</p>` : ""}`;
+function renderTimeline(dayId){
+  const host = document.getElementById("tl-" + dayId);
+  const cat = catalogue(dayId);
+  const placed = S.days[dayId].placed;
+  const rows = Object.keys(placed)
+    .filter(id => cat[id])
+    .map(id => ({ id, time: placed[id], it: cat[id] }))
+    .sort(byTime);
 
-      if (s.opts && s.opts.length){
-        html += `<div class="opts">`;
-        s.opts.forEach((o, oi) => {
-          const picked = S.picks[id] === oi ? "1" : "0";
-          html += `<button type="button" class="opt" data-pick="${id}" data-i="${oi}" data-picked="${picked}" aria-pressed="${picked==="1"}">
-            <span class="top"><span class="nm">${esc(o.n)}</span><span class="meta">${esc(o.m||"")}</span></span>
-            <span class="why">${esc(o.w)}</span>
-            ${(o.url || o.map) ? `<span class="links">
-              ${o.url ? `<a href="${esc(o.url)}" target="_blank" rel="noopener">Website</a>` : ""}
-              ${o.map ? `<a href="${esc(o.map)}" target="_blank" rel="noopener">Map</a>` : ""}
-            </span>` : ""}
-          </button>`;
-        });
-        html += `</div><p class="pickhint">Tap the one you book. Tap again to unpick.</p>`;
-      }
+  if (!rows.length){
+    host.innerHTML = `<p class="empty">Nothing scheduled yet. Add something from the options below.</p>`;
+    return;
+  }
 
-      if (s.note !== undefined && s.note !== ""){
-        html += `<div class="note"><label for="n-${id}">${esc(s.note)}</label>
-          <input type="text" id="n-${id}" data-note="${id}" value="${esc(S.notes[id]||"")}" placeholder="Type here"></div>`;
-      }
-      html += `</div>`;
-    });
-
-    html += `</div>`;
-    html += `<div class="custom">
-      <h5>Your own additions for ${esc(d.name)}</h5>
-      <div id="c-${d.id}"></div>
-      <div class="addrow">
-        <input type="text" class="tm" id="ct-${d.id}" placeholder="7pm">
-        <input type="text" id="cn-${d.id}" placeholder="What's happening">
-        <button class="btn ghost" data-add="${d.id}">Add</button>
+  host.innerHTML = rows.map(r => {
+    const it = r.it;
+    const lock = it.locked ? "1" : "0";
+    return `<div class="ev" data-ev="${dayId}:${r.id}" data-locked="${lock}">
+      <span class="clock">${esc(fmt(r.time))}</span>
+      <div class="bar">
+        <button class="bartext" data-toggle="${dayId}:${r.id}" aria-expanded="false">
+          <span class="lbl">${esc(it.s)}</span><span class="car">▶</span>
+        </button>
+        ${it.locked ? "" : `<span class="barside"><button data-remove="${dayId}:${r.id}"
+            title="Move to the options list" aria-label="Move ${esc(it.s)} to the options list">−</button></span>`}
+      </div>
+      <div class="detail">
+        ${it.meta ? `<div class="meta">${esc(it.meta)}</div>` : ""}
+        ${it.d ? `<p>${esc(it.d)}</p>` : `<p class="empty">Your own item — add a note below if you like.</p>`}
+        ${it.warn ? `<p class="warn">${esc(it.warn)}</p>` : ""}
+        ${it.win ? `<p class="win">${esc(it.win)}</p>` : ""}
+        ${(it.url || it.map) ? `<p class="links">
+          ${it.url ? `<a href="${esc(it.url)}" target="_blank" rel="noopener">Website</a>` : ""}
+          ${it.map ? `<a href="${esc(it.map)}" target="_blank" rel="noopener">Map</a>` : ""}</p>` : ""}
+        ${it.locked ? "" : `<div class="editrow">
+          <label for="tm-${dayId}-${r.id}">Time</label>
+          <input type="time" id="tm-${dayId}-${r.id}" value="${esc(r.time)}" data-time="${dayId}:${r.id}">
+        </div>`}
+        <div class="note">
+          <label for="nt-${dayId}-${r.id}">Bookings, references, notes</label>
+          <input type="text" id="nt-${dayId}-${r.id}" data-note="${dayId}:${r.id}"
+                 value="${esc(S.notes[dayId + ":" + r.id] || "")}" placeholder="Type here">
+        </div>
       </div>
     </div>`;
+  }).join("");
+}
 
-    wrap.innerHTML = html;
-    host.appendChild(wrap);
-    renderCustom(d.id);
-  });
+function renderPool(dayId){
+  const d = SEED.days.find(x => x.id === dayId);
+  const cat = catalogue(dayId);
+  const placed = S.days[dayId].placed;
+  const pool = Object.values(cat).filter(it => placed[it.id] === undefined)
+    .sort((a, b) => (a.t || "").localeCompare(b.t || ""));
+
+  const host = document.getElementById("pl-" + dayId);
+  host.innerHTML = `<h4>Other options for ${esc(d.name)}</h4>
+    <p class="psub">Everything you could do today but haven't scheduled. Plus adds it back at the suggested time.</p>` +
+    (pool.length
+      ? pool.map(it => `<div class="pitem">
+          <div class="pmain">
+            <div class="pt">${esc(it.s)}</div>
+            ${it.meta ? `<div class="pw">${esc(it.meta)}</div>` : ""}
+            ${it.d ? `<div class="pd">${esc(it.d.length > 150 ? it.d.slice(0,148) + "…" : it.d)}</div>` : ""}
+          </div>
+          <div class="pbtns">
+            <button class="btn sm" data-add="${dayId}:${it.id}" aria-label="Add ${esc(it.s)} to the timeline">+</button>
+            ${it.custom ? `<button class="btn ghost sm" data-kill="${dayId}:${it.id}"
+                 aria-label="Delete ${esc(it.s)} permanently">✕</button>` : ""}
+          </div>
+        </div>`).join("")
+      : `<p class="empty">Nothing left over — everything for this day is in the timeline.</p>`);
+
+  // refresh the picker
+  const sel = document.getElementById("as-" + dayId);
+  if (sel){
+    sel.innerHTML = pool.length
+      ? pool.map(it => `<option value="${esc(it.id)}">${esc(it.s)}</option>`).join("")
+      : `<option value="">Nothing left in the options list</option>`;
+  }
 }
 
 function selectDay(id){
@@ -595,90 +756,92 @@ function selectDay(id){
     b.setAttribute("aria-selected", i === idx ? "true" : "false"));
 }
 
-function renderCustom(dayId){
-  const host = document.getElementById("c-" + dayId);
-  if (!host) return;
-  const list = S.custom[dayId] || [];
-  if (!list.length){ host.innerHTML = `<p style="font-size:13.5px;color:rgba(253,247,234,.34);margin:0 0 4px">Nothing added yet. Flights, tickets, a bar you spotted — it all goes here.</p>`; return; }
-  host.innerHTML = list.map((it, i) => `<div class="crow">
-      <span class="ct">${esc(it.t || "—")}</span>
-      <span class="cb">${esc(it.n)}</span>
-      <button class="iconbtn" data-del="${dayId}" data-i="${i}" aria-label="Remove ${esc(it.n)}">✕</button>
-    </div>`).join("");
-}
-
-/* ============================================================
-   Render — essentials, also-on, checklist
-   ============================================================ */
 function renderEssentials(){
-  const host = document.getElementById("essentials");
   const e = SEED.essentials;
   const groups = [
-    { h:"Getting there", keys:["flightOut","flightOutTime","flightHome","flightHomeTime"] },
     { h:"Where you're staying", keys:["hotel","hotelAddr","hotelConf"] },
-    { h:"Getting around", keys:["transferIn","transferOut","myki"] },
+    { h:"Getting around", keys:["transferIn","transferOut","car","myki"] },
     { h:"Notes", keys:["notes"] }
   ];
-  host.innerHTML = groups.map(g => `<div class="panel"><h4>${esc(g.h)}</h4>${
-    g.keys.map(k => {
+  document.getElementById("essentials").innerHTML = groups.map(g =>
+    `<div class="panel"><h4>${esc(g.h)}</h4>${g.keys.map(k => {
       const f = e[k];
       const val = S.essentials[k] !== undefined ? S.essentials[k] : f.v;
-      const type = k.endsWith("Time") ? "datetime-local" : "text";
       return `<div class="field"><label for="e-${k}">${esc(f.label)}</label>${
-        f.big
-          ? `<textarea id="e-${k}" data-ess="${k}" placeholder="Restaurant you want to try, a gift to buy, whatever">${esc(val)}</textarea>`
-          : `<input type="${type}" id="e-${k}" data-ess="${k}" value="${esc(val)}" placeholder="Add yours">`
+        f.big ? `<textarea id="e-${k}" data-ess="${k}" placeholder="Anything you want to remember">${esc(val)}</textarea>`
+              : `<input type="text" id="e-${k}" data-ess="${k}" value="${esc(val)}" placeholder="Add yours">`
       }</div>`;
-    }).join("")
-  }</div>`).join("");
-}
-
-function renderAlso(){
-  document.getElementById("also").innerHTML = SEED.also.map(a => `<div class="card ${a.c}">
-      <h4>${esc(a.t)}</h4>
-      <div class="w">${esc(a.w)}</div>
-      <p>${esc(a.d)}</p>
-      ${a.l ? `<a class="lk" href="${esc(a.l)}" target="_blank" rel="noopener">Details</a>` : ""}
-    </div>`).join("");
+    }).join("")}</div>`).join("");
 }
 
 function renderCheck(){
   const items = SEED.check.concat(S.extraChecks || []);
-  document.getElementById("check").innerHTML = items.map((t, i) => `<li>
-      <input type="checkbox" id="k${i}" data-check="${i}" ${S.checked[i] ? "checked" : ""}>
-      <label class="txt" for="k${i}">${esc(t)}</label>
-    </li>`).join("");
+  document.getElementById("check").innerHTML = items.map((t, i) =>
+    `<li><input type="checkbox" id="k${i}" data-check="${i}" ${S.checked[i] ? "checked" : ""}>
+     <label class="txt" for="k${i}">${esc(t)}</label></li>`).join("");
 }
 
 /* ============================================================
    Events
    ============================================================ */
 document.addEventListener("click", e => {
-  const pick = e.target.closest("[data-pick]");
-  if (pick){
-    const id = pick.dataset.pick, i = +pick.dataset.i;
-    S.picks[id] = (S.picks[id] === i) ? null : i;
-    pick.closest(".opts").querySelectorAll(".opt").forEach(o => {
-      const on = S.picks[id] === +o.dataset.i;
-      o.dataset.picked = on ? "1" : "0";
-      o.setAttribute("aria-pressed", on);
-    });
-    save(); return;
+  const t = e.target;
+
+  const tog = t.closest("[data-toggle]");
+  if (tog){
+    const ev = tog.closest(".ev");
+    const open = ev.classList.toggle("open");
+    tog.setAttribute("aria-expanded", open);
+    return;
   }
-  const add = e.target.closest("[data-add]");
-  if (add){
-    const d = add.dataset.add;
-    const tEl = document.getElementById("ct-" + d), nEl = document.getElementById("cn-" + d);
-    const n = nEl.value.trim(); if (!n) { nEl.focus(); return; }
-    (S.custom[d] = S.custom[d] || []).push({ t: tEl.value.trim(), n });
-    tEl.value = ""; nEl.value = "";
-    renderCustom(d); save(); return;
+  const rm = t.closest("[data-remove]");
+  if (rm){
+    const [day, id] = rm.dataset.remove.split(":");
+    delete S.days[day].placed[id];
+    renderTimeline(day); renderPool(day); save();
+    flash("Moved to the options list");
+    return;
   }
-  const del = e.target.closest("[data-del]");
-  if (del){
-    const d = del.dataset.del;
-    S.custom[d].splice(+del.dataset.i, 1);
-    renderCustom(d); save(); return;
+  const ad = t.closest("[data-add]");
+  if (ad){
+    const [day, id] = ad.dataset.add.split(":");
+    const it = catalogue(day)[id];
+    S.days[day].placed[id] = it.t || "12:00";
+    renderTimeline(day); renderPool(day); save();
+    flash("Added to the timeline");
+    return;
+  }
+  const kill = t.closest("[data-kill]");
+  if (kill){
+    const [day, id] = kill.dataset.kill.split(":");
+    delete S.days[day].custom[id];
+    delete S.notes[day + ":" + id];
+    renderPool(day); save();
+    return;
+  }
+  const as = t.closest("[data-addsel]");
+  if (as){
+    const day = as.dataset.addsel;
+    const id = document.getElementById("as-" + day).value;
+    if (!id) return;
+    S.days[day].placed[id] = document.getElementById("at-" + day).value || "12:00";
+    renderTimeline(day); renderPool(day); save();
+    return;
+  }
+  const ao = t.closest("[data-addown]");
+  if (ao){
+    const day = ao.dataset.addown;
+    const el = document.getElementById("ax-" + day);
+    const txt = el.value.trim();
+    if (!txt){ el.focus(); return; }
+    const id = "u" + Date.now().toString(36);
+    const time = document.getElementById("at-" + day).value || "12:00";
+    S.days[day].custom[id] = { id, t:time, s:txt, d:"", custom:true };
+    S.days[day].placed[id] = time;
+    el.value = "";
+    renderTimeline(day); renderPool(day); save();
+    flash("Added yours");
+    return;
   }
 });
 
@@ -687,10 +850,20 @@ document.addEventListener("input", e => {
   if (t.dataset.note !== undefined){ S.notes[t.dataset.note] = t.value; save(); }
   if (t.dataset.ess !== undefined){ S.essentials[t.dataset.ess] = t.value; save(); }
 });
+
 document.addEventListener("change", e => {
-  if (e.target.dataset.check !== undefined){
-    S.checked[e.target.dataset.check] = e.target.checked; save();
+  const t = e.target;
+  if (t.dataset.time !== undefined){
+    const [day, id] = t.dataset.time.split(":");
+    S.days[day].placed[id] = t.value;
+    if (S.days[day].custom[id]) S.days[day].custom[id].t = t.value;
+    save();
+    renderTimeline(day);
+    const ev = document.querySelector(`[data-ev="${day}:${id}"]`);
+    if (ev){ ev.classList.add("open"); ev.querySelector(".bartext").setAttribute("aria-expanded","true"); }
+    return;
   }
+  if (t.dataset.check !== undefined){ S.checked[t.dataset.check] = t.checked; save(); }
 });
 
 document.getElementById("addcheck").onclick = () => {
@@ -702,7 +875,6 @@ document.getElementById("addcheck").onclick = () => {
 document.getElementById("newcheck").addEventListener("keydown", e => {
   if (e.key === "Enter") document.getElementById("addcheck").click();
 });
-
 document.getElementById("print").onclick = () => window.print();
 document.getElementById("export").onclick = () => {
   const blob = new Blob([JSON.stringify(S, null, 2)], { type:"application/json" });
@@ -714,10 +886,8 @@ document.getElementById("export").onclick = () => {
   flash("Backup downloaded");
 };
 
-/* countdown */
 function countdown(){
-  const then = new Date(SEED.meta.departISO).getTime();
-  const days = Math.ceil((then - Date.now()) / 86400000);
+  const days = Math.ceil((new Date(SEED.meta.departISO).getTime() - Date.now()) / 86400000);
   const b = document.getElementById("cd"), l = document.getElementById("cdl");
   if (days > 1){ b.textContent = days; l.textContent = "days until wheels up"; }
   else if (days === 1){ b.textContent = "1"; l.textContent = "day until wheels up"; }
@@ -725,34 +895,16 @@ function countdown(){
   else { b.textContent = "Home"; l.textContent = "hope it was good"; }
 }
 
-/* ============================================================
-   Optional cloud sync (Netlify Function + Airtable)
-   ============================================================ */
+/* ---------- optional Airtable sync ---------- */
 const CLOUD = "/.netlify/functions/trip";
 async function cloudProbe(){
   try{
-    const r = await fetch(CLOUD + "?key=westy", { method:"GET" });
+    const r = await fetch(CLOUD + "?key=westy");
     if (!r.ok) return;
     document.getElementById("cloud").hidden = false;
-    const empty = !Object.keys(S.notes).length && !Object.keys(S.picks).length
-               && !Object.keys(S.essentials).length;
-    if (empty) cloudPull();
-  }catch(e){ /* function not deployed — stay local-only */ }
+    if (!Object.keys(S.notes).length && !Object.keys(S.essentials).length) cloudPull();
+  }catch(e){}
 }
-document.getElementById("cloud").onclick = async () => {
-  const btn = document.getElementById("cloud");
-  btn.disabled = true;
-  try{
-    const put = await fetch(CLOUD, {
-      method:"POST", headers:{ "Content-Type":"application/json" },
-      body: JSON.stringify({ key:"westy", data:S })
-    });
-    if (!put.ok) throw new Error(await put.text());
-    flash("Synced to Airtable");
-  }catch(err){
-    flash("Sync failed — saved on this device");
-  }finally{ btn.disabled = false; }
-};
 async function cloudPull(){
   try{
     const r = await fetch(CLOUD + "?key=westy");
@@ -760,27 +912,36 @@ async function cloudPull(){
     const j = await r.json();
     if (j && j.data && Object.keys(j.data).length){
       S = Object.assign(blank(), j.data);
+      SEED.days.forEach(d => { if (!S.days[d.id]){
+        const placed = {}; d.items.forEach(it => { if (it.on) placed[it.id] = it.t; });
+        S.days[d.id] = { placed, custom:{} };
+      }});
       renderDays(); renderEssentials(); renderCheck();
       flash("Loaded from Airtable");
     }
   }catch(e){}
 }
+document.getElementById("cloud").onclick = async () => {
+  const btn = document.getElementById("cloud");
+  btn.disabled = true;
+  try{
+    const r = await fetch(CLOUD, { method:"POST", headers:{ "Content-Type":"application/json" },
+      body: JSON.stringify({ key:"westy", data:S }) });
+    if (!r.ok) throw new Error();
+    flash("Synced to Airtable");
+  }catch(e){ flash("Sync failed — saved on this device"); }
+  finally{ btn.disabled = false; }
+};
 
-/* ============================================================
-   Boot
-   ============================================================ */
+/* boot */
 load();
 renderDays();
 renderEssentials();
-renderAlso();
 renderCheck();
 countdown();
 document.getElementById("status").textContent = "All changes saved to this device";
 cloudProbe();
-
-if ("serviceWorker" in navigator){
-  navigator.serviceWorker.register("sw.js").catch(()=>{});
-}
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(()=>{});
 </script>
 </body>
 </html>
